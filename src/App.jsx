@@ -2,7 +2,7 @@ function App() {
   
   return (
     <div>
-      <h1> Let's get to work 💻</h1>
+      <h1> Bonjour Typhaine</h1>
     </div>
   )
 }
