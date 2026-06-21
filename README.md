@@ -27,3 +27,9 @@ git push --set-upstream origin typhaine-legales
 
 quand vous retournez ici https://github.com/TyphaineLeGales/DNAMDE_II, votre branche avec votre nom devrait s'afficher ici 
 ![Setup branch](./public/setup-branch.png)
+
+# AFFICHER UNE LISTE DES FILMS
+Utiliser la donnée contenue dans /public/filmData.json pour afficher chaque film (avec son titre, sa date de parution et son image dans une grille) comme ici 
+![Film Grid](./public/film-grid.png)
+
+RAPPEL -> 

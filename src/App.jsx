@@ -1,3 +1,4 @@
+import FilmList from "./components/FilmList"
 function App() {
   
   return (
