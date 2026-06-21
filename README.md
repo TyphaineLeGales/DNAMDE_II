@@ -25,4 +25,5 @@ git commit -m "feat: my first commit"
 git push --set-upstream origin typhaine-legales
 ```
 
-quand vous retournez ici https://github.com/TyphaineLeGales/DNAMDE_II, votre branche avec votre nom devrait s'afficher ici (./public/setup-branch.png)
+quand vous retournez ici https://github.com/TyphaineLeGales/DNAMDE_II, votre branche avec votre nom devrait s'afficher ici 
+![Setup branch](./public/setup-branch.png)
