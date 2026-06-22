@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Inception",
+    "releaseDate": "2010",
+    "image": "https://image.tmdb.org/t/p/w500/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Interstellar",
+    "releaseDate": "2014",
+    "image": "https://image.tmdb.org/t/p/w500/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg"
+  },
+  {
+    "id": 3,
+    "title": "The Dark Knight",
+    "releaseDate": "2008",
+    "image": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Dune",
+    "releaseDate": "2021",
+    "image": "https://image.tmdb.org/t/p/w500/8b8R8l88Qje9dn9OE8PY05Nxl1X.jpg"
+  }
+]
