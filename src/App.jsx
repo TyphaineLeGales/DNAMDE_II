@@ -1,3 +1,5 @@
+import './App.css'
+
 import FilmDisplay from "./components/FilmDisplay"
 
 function App() {
