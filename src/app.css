@@ -2,9 +2,11 @@
 .movies-container{
     display: grid;
     grid-template-columns: 350px 350px 350px;
+    grid-template-rows: min-content;
     gap: 20px;
     margin: auto;
     margin-top: 40px;
+
 
 }
 

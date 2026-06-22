@@ -13,6 +13,7 @@
 body {
   margin: 0;
   background-color: var(--bg);
+  background-color: rgb(235, 232, 229)
 }
 
 #root {
