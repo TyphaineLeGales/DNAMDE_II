@@ -98,3 +98,15 @@ code {
 object-fit: cover;
 border-radius: 4px;
 }
+
+.button-choice{
+  padding: 7px;
+  border: 0px;
+}
+
+.wrapp-button{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding-top: 30px;
+}
