@@ -1,4 +1,35 @@
 #app {
   display: flex;
-  justify-content: center
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+#searchbar {
+  width: min(100%, 500px);
+  height: 2rem;
+  border-radius: 20px;
+  padding: 0 1rem;
+}
+
+.genre-chip-list {
+  display: flex;
+  overflow: scroll;
+  width: 100%;
+  gap: 1rem;
+  scrollbar-width: none;
+}
+
+.genre-chip {
+  white-space: nowrap;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid white;
+
+  &[data-selected='true'] {
+    color: var(--bg);
+    background-color: var(--text-h);
+  }
 }

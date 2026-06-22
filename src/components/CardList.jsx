@@ -1,10 +1,14 @@
 import Card from './Card';
-import './CardList.css'
+import './CardList.css';
 
 export default function CardList(props) {
+  const cards = props.cards.length > 0
+    ? props.cards.map((card, i) => <Card data={card} key={i}/>)
+    : (<p>No movie found ☝️🤓</p>)
+
   return (
     <div className="cardList">
-      {props.cards.map((card, i) => <Card data={card} key={i}/>)}
+      {cards}
     </div>
   )
 }

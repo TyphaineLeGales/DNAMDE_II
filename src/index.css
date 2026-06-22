@@ -20,7 +20,8 @@
 
 
 body {
-  margin: 4rem 0;
+  margin: 4rem 1rem;
+  scrollbar-gutter: stable;
   color: var(--text-h);
   background-color: var(--bg);
 }
