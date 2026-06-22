@@ -1,9 +1,17 @@
+import MovieCard from "./movies";
+import movies from "./assets/filmData.json";
+
 function App() {
   return (
-    <div>
-      <h1> Hello Amandine ! </h1>
+    <div className="movies-container">
+      {movies.map((movie, index) => (
+        <MovieCard
+          key={index}
+          movie={movie}
+        />
+      ))}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
