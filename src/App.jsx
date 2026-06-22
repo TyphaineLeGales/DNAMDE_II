@@ -1,9 +1,7 @@
-import FilmList from "./components/FilmList"
 function App() {
-  
   return (
     <div>
-      <h1> Let's get to work 💻</h1>
+      <h1> Hello 🌞 </h1>
     </div>
   )
 }
