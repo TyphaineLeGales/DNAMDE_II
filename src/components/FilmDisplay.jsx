@@ -5,7 +5,7 @@ import data from "../assets/filmData.json";
 
 function FilmDisplay() {
   const [value, setValue] = useState();
-  const [isUserSearching, setIsUserSearching] = useState(true);
+  const [isUserSearching, setIsUserSearching] = useState(false);
 
   const handleChange = (e) => {
     setIsUserSearching(true);
@@ -19,7 +19,21 @@ function FilmDisplay() {
       <InputBar valueChange={handleChange}></InputBar>
       <div className="film-display">
         {isUserSearching
-          ? "nothing to see here"
+          ? /* data.filter((film) => {
+              if (film.Title.includes(value)) {
+                return (
+                  <FilmCard
+                    key={film.Title}
+                    preview={film.Images[0]}
+                    title={film.Title}
+                    date={film.Released}
+                    rating={film.Metascore}
+                    genre={film.Genre}
+                    resume={film.Plot}
+                  />
+                );
+              }
+            }) */ "hello"
           : data.map((film) => {
               return (
                 <FilmCard
