@@ -13,15 +13,17 @@ function FilmDisplay() {
     setValue(e.target.value);
   };
 
-  console.log(value);
-
   return (
     <>
       <InputBar valueChange={handleChange}></InputBar>
       <div className="film-display">
         {isUserSearching
           ? data
-              .filter((film) => film.Title.toLowerCase().includes(value) || film.Title.includes(value))
+              .filter(
+                (film) =>
+                  film.Title.toLowerCase().includes(value) ||
+                  film.Title.includes(value),
+              )
               .map((film) => {
                 return (
                   <FilmCard
