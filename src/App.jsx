@@ -1,7 +1,10 @@
+import FilmList from './components/FilmList';
+
 function App() {
   return (
     <div>
-      <h1> Bonjour Lina </h1>
+      <h1> Liste de films </h1>
+      <FilmList />
     </div>
   )
 }
