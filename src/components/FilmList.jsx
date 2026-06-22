@@ -10,8 +10,8 @@ function FilmList() {
         <Film 
         key={index}
         Title={film.Title}
-        Genre={film.Genre}
         Year={film.Year}
+        Genre={film.Genre}
         Images={film.Images}
         imdbRating={film.imdbRating}
         Plot={film.Plot}

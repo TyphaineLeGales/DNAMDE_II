@@ -23,10 +23,16 @@
 
 }
 
-.film img {
+.imagecontainer{
   width: 100%;
-  margin-bottom: 10px;
+  height: 60%;
   border-radius: 15px 15px 0px 0px;
+}
+
+.images{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .filmlist{
@@ -34,7 +40,7 @@
   margin: 1em auto;
   display: grid;
   grid-template-columns: 350px 350px 350px;
-  grid-gap: 500px;
+  grid-gap: 40px;
 
 }
 

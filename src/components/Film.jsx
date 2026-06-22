@@ -1,7 +1,9 @@
 function Film({ Title, Year, Images, Genre,imdbRating, Plot}) {
   return (
     <div className="film">
-      <img src={Images} alt={Images} />
+      <div className="imagecontainer">
+      <img className="images" src={Images} alt={Images} />
+      </div>
       <h2>{Title}</h2>
       <p>{Year}</p>
       <p>{imdbRating}</p>
