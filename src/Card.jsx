@@ -1,18 +1,19 @@
 import "./card.css"
 
-function Card() {
+function Card(props) {
+    console.log(props)
 
 
     return (
-      <div>
-        <img src="photo.png" alt="" class = "movie-picture"/>
-        <h1 class = "movie-title"> titre film </h1>
-        <div>
-            <p class = "movie-date">Date</p>
-            <div><p>⭐</p><p>Rate</p></div>
+      <div className="card">
+        <img src= {props.data.Poster} alt="" className = "movie-picture"/>
+        <h1 className = "movie-title"> {props.data.Title} </h1>
+        <div className="movie-date-rate-container">
+            <p className = "movie-date">{props.data.Year}</p>
+            <div  className="movie-rate"><p>⭐ {props.data.imdbRating}</p></div>
         </div>
-        <p class = "movie-genres">genres</p>
-        <p class = "movie-synopsis"> synopsis</p>
+        <p className = "movie-genres">{props.data.Genre}</p>
+        <p className = "movie-synopsis"> {props.data.Plot}</p>
       </div>
     )
   }
