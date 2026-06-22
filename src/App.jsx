@@ -1,8 +1,12 @@
+import FilmDisplay from "./components/FilmDisplay"
+
 function App() {
+
+
   return (
-    <div>
-      <h1> Hello 🌞 world</h1>
-    </div>
+    <>
+    <FilmDisplay />
+    </>
   )
 }
 
