@@ -1,0 +1,10 @@
+h1{
+    color: red;
+}
+.movies-container{
+    display: grid;
+    grid-template-columns: 20vw 20vw 20vw;
+}
+*{
+    border: 1px solid red;
+}
