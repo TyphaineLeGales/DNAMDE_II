@@ -1,3 +1,10 @@
+.input-bar{
+    margin-top:5%;
+   width:30rem;
+   height:35px;
+   border-radius: 1rem;
+}
+
 .film-display{
     width: 70%;
     padding:2rem 2.5rem;
