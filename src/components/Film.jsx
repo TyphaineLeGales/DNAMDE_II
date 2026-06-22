@@ -1,7 +1,7 @@
-function Film({ Title, Year, Poster, Genre,imdbRating, Plot}) {
+function Film({ Title, Year, Images, Genre,imdbRating, Plot}) {
   return (
     <div className="film">
-      <img src={Poster} alt={Poster} />
+      <img src={Images} alt={Images} />
       <h2>{Title}</h2>
       <p>{Year}</p>
       <p>{imdbRating}</p>

@@ -9,13 +9,12 @@ function FilmList() {
       {filmData.map((film, index) => (
         <Film 
         key={index}
-          Title={film.Title}
-          Genre={film.Genre}
-          Year={film.Year}
-          Poster={film.Poster}
-          imdbRating={film.imdbRating}
-          Plot={film.Plot}
-
+        Title={film.Title}
+        Genre={film.Genre}
+        Year={film.Year}
+        Images={film.Images}
+        imdbRating={film.imdbRating}
+        Plot={film.Plot}
         />
       ))}
     </div>
