@@ -1,5 +1,5 @@
 import Card from './Card';
-import './Card.css'
+import './CardList.css'
 
 export default function CardList(props) {
   return (
