@@ -5,18 +5,30 @@
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
+
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
+
+  /* Film cards */
+
+  --card-bg: white;
+  --card-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  --secondary-text: #666;
+  --plot-text: #444;
+  --tag-bg: #ececec;
+  --tag-active-bg: black;
+  --tag-active-text: white;
+ 
 }
 
 
 body {
   margin: 0;
-  background-color: var(--bg);
+
 }
 
 #root {
-  width: 1126px;
+ 
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -75,6 +87,46 @@ code {
 .app {
   min-height: 100vh;
   transition:all 0.2s ease-out;
+   padding: 0 128px;
 
 }
 
+
+.app.light {
+  --bg:  white;
+  --text-h: #08060d;
+  background-color: var(--bg);
+  
+}
+
+.app.dark {
+
+  --bg: #121212;
+  background-color: var(--bg);
+
+  --text: #d6d6d6;
+
+  --text-h: white;
+
+  --border: #333;
+
+  --code-bg: #252525;
+
+
+  --card-bg: #1f1f1f;
+
+  --card-shadow:
+
+    0 4px 15px rgba(0,0,0,0.4);
+
+  --secondary-text: #bdbdbd;
+
+  --plot-text: #d6d6d6;
+
+  --tag-bg: #2c2c2c;
+
+  --tag-active-bg: white;
+
+  --tag-active-text: black;
+
+}
