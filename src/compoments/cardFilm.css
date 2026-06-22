@@ -1,0 +1,56 @@
+/* VARIABLES */
+* {
+    --background-color: #f2f2f2;
+    --primary-color: #ff5317;
+    --text-color: #333;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: var(--background-color);
+    margin: 0;
+    padding: 20px;
+}
+
+
+
+
+.film-card {
+    border-radius: 18px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.218);
+    overflow: hidden;
+    background: var(--background-color);
+    text-align: center;
+}
+
+.film-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.film-card h2 {
+    font-size: 1.3rem;
+    margin: 10px 0;
+}
+
+.film-note {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.film-genre {
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.film-resume {
+  font-size: 0.9rem;
+  padding: 0 20px 15px;
+  color:  var(--text-color);
+}
