@@ -2,7 +2,7 @@ function Film ({Title, Year, imbRating, Genre, Plot, Images}){
     return (
         <div>
             <div>
-                <img src={Images[0]} alt="img"/>
+                <img src={Images[0]} alt="{Title}"/>
             </div>
             <h2>
                 {Title}
