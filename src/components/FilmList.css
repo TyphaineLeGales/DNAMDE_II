@@ -1,0 +1,52 @@
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+}
+
+
+.film{
+  border: 1px solid #08060d;
+  border-radius: 15px;
+  display: grid;
+  grid-template-rows: 1fr max-content;
+  margin-bottom: 30px;
+  justify-self: center;
+
+}
+
+.film img {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.filmlist{
+  max-width: 400px;
+  margin: 1em auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 40px;
+
+}
+
+h2{
+  margin-top: 15px;
+}
+
+p{
+  color: #6b6375;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  align-items:center
+}
+
+h3{
+    font-size: 16px;
+}
