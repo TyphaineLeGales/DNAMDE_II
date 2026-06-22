@@ -78,3 +78,23 @@ code {
 
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap : 20px;
+  padding: 20px;
+}
+
+.film-card {
+  border : 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.film-card img {
+  width: 100%;
+  height : 250px;
+object-fit: cover;
+border-radius: 4px;
+}
