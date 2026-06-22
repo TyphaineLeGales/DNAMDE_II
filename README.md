@@ -57,6 +57,8 @@ La selection par genre doit se combiné à l'input de recherche par titre
 # IV. CREATING A LIGHT & DARK THEME
 
 1. Créer un toggle dark / light pour changer le theme de l'UI. Le state de valeur du thème devra etre créer dans App à la racine de votre application react pour pouvoir etre passé a l'ensemble des composants. Penser a utiliser les variables CSS pour modifier les valeurs de couleur de fonds et de text.
+![Dark theme](./public/dark-theme.png)
+![Light theme](./public/light-theme.png)
 
 *Concepts mobilisés : CSS variables, useState*  
 
