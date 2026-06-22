@@ -6,6 +6,10 @@ import { useState } from "react" // import pour se souvenir
 
 function FilmList (){
     const [search, setSearch] = useState("")
+    const genresUniques = [...new Set(filmData.map((unFilm) => unFilm.Genre.split(",")).flat())]
+    //ci dessus cela créer un tableau sans doublon des genre
+    const [selectedGenre, setSelectedGenre] = useState("All")
+    //fonction pour selectionner le statue des genres
     return (
         <>
         <div>
@@ -14,8 +18,15 @@ function FilmList (){
             value={search}
             onChange={(e)=> setSearch(e.target.value)}/>
         </div>
+        <div> 
+            {genresUniques.map((unGenre)=> (
+                <button key={unGenre}
+                onClick={(e)=> setSelectedGenre(unGenre)}>{unGenre}
+                </button>
+            ))}
+        </div>
         <div className="grid-container">
-            {filmData.filter((unFilm)=> unFilm.Title.toLowerCase().includes(search.toLowerCase())).map((unFilm) => (
+            {filmData.filter((unFilm)=> unFilm.Title.toLowerCase().includes(search.toLowerCase()) &&  selectedGenre==="All" || unFilm.Genre.includes(selectedGenre)).map((unFilm) => (
                 <Film 
                 key={unFilm.Title}
                 Title={unFilm.Title}
