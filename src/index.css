@@ -1,23 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --sans: "Google Sans", system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-h: white;
+    --bg: #2f2f2f;
+  }
+}
+
 
 body {
-  margin: 0;
+  margin: 4rem 1rem;
+  scrollbar-gutter: stable;
+  color: var(--text-h);
   background-color: var(--bg);
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
   border-inline: 1px solid var(--border);
@@ -25,6 +35,7 @@ body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  align-items: center;
 }
 
 h1,
@@ -77,4 +88,3 @@ code {
   transition:all 0.2s ease-out;
 
 }
-
