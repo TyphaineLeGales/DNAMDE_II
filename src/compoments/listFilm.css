@@ -20,6 +20,11 @@
     color: var(--primary-color);
 }
 
+.mode {
+    border-radius: 8px;
+    border: 1px solid var(--primary-color);
+}
+
 @media (max-width: 768px) {
     .film-grid {
         grid-template-columns: repeat(2, 1fr);

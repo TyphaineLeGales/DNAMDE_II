@@ -6,12 +6,12 @@ function App() {
 
   const toggleDark = () => {
     setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark");  // ← ajoute/enlève "dark" sur <html>
+    document.documentElement.classList.toggle("dark");
   };
 
   return (
     <div>
-      <button onClick={toggleDark}>
+      <button onClick={toggleDark} className="mode">
         {darkMode ? "☀️ Mode clair" : "🌙 Mode nuit"}
       </button>
       <h1>Hello Louane 🌞</h1>
