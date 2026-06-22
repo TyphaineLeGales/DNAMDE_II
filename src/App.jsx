@@ -7,11 +7,13 @@ import filmData from "./assets/filmData.json?raw"
 
 function App() {
   const FILMDATA = filmData
+  const data = typeof FILMDATA === "string" ? JSON.parse(FILMDATA) : FILMDATA
+
   return (
     <div className="movies-container">
-      {FILMDATA.map((n) => (<Card key={n.title} title={n.title} />))}
-
-      <Card />
+      {data.map((item, i) => (
+        <Card key={item.id ?? i} {...item} />
+      ))}
     </div>
   )
 }
