@@ -7,13 +7,13 @@ function FilmDisplay() {
   const [value, setValue] = useState();
   const [isUserSearching, setIsUserSearching] = useState(false);
 
- 
-
   const handleChange = (e) => {
-     e.preventDefault();
-     setIsUserSearching(true);
-     setValue(e.target.value)
-    }
+    e.preventDefault();
+    setIsUserSearching(true);
+    setValue(e.target.value);
+  };
+
+  console.log(value);
 
   return (
     <>
@@ -21,7 +21,7 @@ function FilmDisplay() {
       <div className="film-display">
         {isUserSearching
           ? data
-              .filter((film) => film.Title.includes(value))
+              .filter((film) => film.Title.toLowerCase().includes(value) || film.Title.includes(value))
               .map((film) => {
                 return (
                   <FilmCard
