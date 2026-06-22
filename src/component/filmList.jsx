@@ -28,7 +28,7 @@ function FilmList (){
             ))}
         </div>
         <div className="grid-container">
-            {filmData.filter((unFilm)=> unFilm.Title.toLowerCase().includes(search.toLowerCase()) &&  selectedGenre==="All" || unFilm.Genre.includes(selectedGenre)).map((unFilm) => (
+            {filmData.filter((unFilm)=> unFilm.Title.toLowerCase().includes(search.toLowerCase()) && (selectedGenre === "All" || unFilm.Genre.includes(selectedGenre))).map((unFilm) => (
                 <Film 
                 key={unFilm.Title}
                 Title={unFilm.Title}
