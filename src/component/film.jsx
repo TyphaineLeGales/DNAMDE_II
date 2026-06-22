@@ -7,12 +7,12 @@ function Film ({Title, Year, imbRating, Genre, Plot, Images}){
             <h2>
                 {Title}
             </h2>
-            <div> 
+            <div className="wrapp-year-rate"> 
                 <p>
                     {Year}
                 </p>
                 <p> 
-                    {imbRating}
+                ⭐ {imbRating}
                 </p>
             </div>
             <h3> 

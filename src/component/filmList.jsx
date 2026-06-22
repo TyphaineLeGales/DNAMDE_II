@@ -12,7 +12,8 @@ function FilmList (){
     //fonction pour selectionner le statue des genres
     return (
         <>
-        <div>
+        <div className="wrap-search">
+            <h2>Search a movie</h2>
             <input
             type="text"
             value={search}
