@@ -10,7 +10,7 @@ export default function Card(props) {
   return (
     <div className="card">
       <picture className="movie-poster">
-        <source src={props.data.Images[0]} alt="Poster"/>
+        <source srcset={props.data.Images[0]} alt="Poster"/>
         <img src="placeholder.webp" alt="Poster"/>
       </picture>
       {/* <img className="movie-poster" src={props.data.Images[0]} alt="Poster"/> */}
