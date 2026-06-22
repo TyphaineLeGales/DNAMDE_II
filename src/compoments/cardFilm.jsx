@@ -8,8 +8,8 @@ function CardFilm({ film }) {
             />
         <h2>{film.Title}</h2>
         <div className="film-note">
-            <span>{film.Year}</span>
-            <span>⭐{film.imdbRating}</span>
+            <p>{film.Year}</p>
+            <p>⭐{film.imdbRating}</p>
         </div>
         <p className="film-genre">{film.Genre}</p>
         <p className="film-resume">{film.Plot}</p>

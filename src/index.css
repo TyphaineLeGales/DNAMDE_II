@@ -27,7 +27,7 @@ body {
   box-sizing: border-box;
 }
 
-h1,
+/* h1,
 h2 {
   font-family: var(--heading);
   font-weight: 500;
@@ -54,7 +54,7 @@ h2 {
 }
 p {
   margin: 0;
-}
+} */
 
 code,
 .counter {

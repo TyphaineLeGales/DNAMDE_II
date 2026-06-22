@@ -24,7 +24,7 @@ function ListFilm() {
             placeholder="Search a movie"
             value={search}
             onChange={(e) => setSearch(e.target.value)}  // update a chaque lettre tapée
-            className="search-input"
+            className="recherche"
         />
 
         {filteredFilms.length === 0 ? (
