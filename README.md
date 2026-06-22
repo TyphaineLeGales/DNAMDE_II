@@ -68,3 +68,6 @@ La 1ère solution c'est l'api de Contexte développée par React https://react.d
 *Concepts mobilisés : Context provider and consumer*  
 
 # V. FETCHING DATA FROM AN ACTUAL API
+*Concepts mobilisés : useEffect, hooks*  
+
+# VI. ANALYZING PERFORMANCE 
