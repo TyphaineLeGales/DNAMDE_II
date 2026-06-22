@@ -1,9 +1,11 @@
+import FilmList from "./FilmList";
+
 function App() {
   return (
-    <div>
-      <h1> Hello 🌞 </h1>
-    </div>
-  )
+    <>
+      <FilmList />
+    </>
+  );
 }
 
-export default App
+export default App;
