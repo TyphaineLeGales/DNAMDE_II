@@ -19,10 +19,12 @@ function FilmList (){
             onChange={(e)=> setSearch(e.target.value)}/>
         </div>
         <div className="wrapp-button"> 
+            <button onClick={()=> setSelectedGenre("All")}
+                className={selectedGenre === "All" ? "button-choice selected" : "button-choice"}>All</button>
             {genresUniques.map((unGenre)=> (
                 <button key={unGenre}
                 onClick={(e)=> setSelectedGenre(unGenre)}
-                className="button-choice"
+                className={selectedGenre === unGenre ? "button-choice selected" : "button-choice"}
                 >{unGenre}
                 </button>
             ))}
