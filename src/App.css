@@ -17,10 +17,12 @@
 .genre-chip-list {
   display: flex;
   /* justify-content: center; */
-  overflow: scroll;
-  width: 100%;
+  overflow-x: scroll;
+  width: var(--max-width-grid);
   gap: 1rem;
-  scrollbar-width: none;
+  scrollbar-width: thin;
+  padding-bottom: 0.5rem;
+  scrollbar-color: rgba(from var(--text-h) r g b / 0.2) transparent;
 }
 
 .genre-chip {

@@ -1,6 +1,6 @@
 .cardList {
   display: grid;
-  width: min(calc(100% - 1rem), 1500px);
+  width: var(--max-width-grid);
 
   --grid-gap: 1rem;
   --grid-min-col-size: 350px;

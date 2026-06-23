@@ -7,6 +7,9 @@
   --sans: "Google Sans", system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
+
+  --max-width-grid: min(calc(100% - 1rem), 1500px);
+
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
 }
@@ -20,7 +23,7 @@
 
 
 body {
-  margin: 4rem 1rem;
+  margin: 2rem 1rem;
   scrollbar-gutter: stable;
   color: var(--text-h);
   background-color: var(--bg);
