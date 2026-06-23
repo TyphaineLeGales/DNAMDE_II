@@ -1,7 +1,7 @@
 import FilmCard from "./FilmCard";
 import InputBar from "./InputBar";
 import TagList from "./TagList";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import data from "../assets/filmData.json";
 
 function FilmDisplay() {
@@ -10,19 +10,29 @@ function FilmDisplay() {
   const handleChange = (e) => {
     e.preventDefault();
     setValue(e.target.value);
-    console.log(filteredFilms);
   };
 
-  const filteredFilms = data.filter((film) =>
-    film.Title.toLowerCase().includes(value),
-  );
+const [selectedTags, setSelectedTags] = useState([]);
 
+const handleTagSelect = (tag, isActive) => {
+  setSelectedTags((prev) =>
+    isActive ? [...prev, tag] : prev.filter((t) => t !== tag),
+  );
+};
+
+const filteredFilms = data.filter((film) => {
+  const matchesSearch = film.Title.toLowerCase().includes(value.toLowerCase());
+  const matchesTags =
+    selectedTags.length === 0 ||
+    selectedTags.every((tag) => film.Genre.includes(tag));
+  return matchesSearch && matchesTags;
+});
 
 
   return (
     <>
       <InputBar valueChange={handleChange}></InputBar>
-      <TagList />
+      <TagList onSelect={handleTagSelect} />
       <div className="film-display">
         {filteredFilms.length === 0 ? (
           <p>nothing found</p>

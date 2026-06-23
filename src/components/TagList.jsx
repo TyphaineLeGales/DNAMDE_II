@@ -1,16 +1,15 @@
 import Tag from "./Tag";
 import data from "../assets/filmData.json";
 
-function TagList() {
+function TagList({onSelect}) {
   const types = data.flatMap((film) => film.Genre.split(", "));
 
   const typesTag = [...new Set(types)];
 
-  console.log(typesTag);
   return (
     <div className="tag-list">
       {typesTag.map((filmType) => (
-        <Tag key={filmType} tag={filmType} />
+        <Tag onSelect={onSelect} key={filmType} tag={filmType} />
       ))}
     </div>
   );

@@ -1,11 +1,13 @@
 import { useState } from "react";
 
-function Tag(props) {
+function Tag({tag, onSelect}) {
   const [active, isActive] = useState(false);
 
-  const handleClick = () => {
-    isActive(active => !active);
-    console.log(active);
+  const handleClick = (event) => {
+
+      const newActive = !active;
+      isActive(newActive);
+      onSelect(tag, newActive);
   };
 
   return (
@@ -13,7 +15,7 @@ function Tag(props) {
       onClick={handleClick}
       className={active ? "tag-btn active" : "tag-btn"}
     >
-      {props.tag}
+      {tag}
     </button>
   );
 }
