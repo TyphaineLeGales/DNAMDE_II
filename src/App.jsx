@@ -1,10 +1,16 @@
 import FilmList from "./component/filmList.jsx"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 function App() {
   const [theme, setTheme] = useState("light")
+
+  // pour que cela s'applique partout.
+  useEffect(() => {
+    document.body.className = theme
+  }, [theme])
+
   return (
     <div className={theme === "dark" ? "dark" : "light"}>
-      <div >
+      <div className="wrapp-theme">
         <button 
         onClick = {() => setTheme((prev) => (prev === "light" ? "dark" : "light"))}>
           {theme}
