@@ -1,39 +1,91 @@
-body {
-  margin: 0;
-  background: #ffffff;
-  color: rgb(0, 0, 0);
-  font-family: 'Shadows Into Light Two', cursive;
+/* =========================
+   BASE VARIABLES
+========================= */
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --card-bg: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.12);
 }
 
+/* DARK THEME */
+.dark {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --card-bg: #1e1e1e;
+  --shadow: rgba(0, 0, 0, 0.4);
+}
+
+/* =========================
+   GLOBAL
+========================= */
+
+body {
+  margin: 0;
+  font-family: 'Shadows Into Light Two', cursive;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* container app */
+.app {
+  min-height: 100vh;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* title */
 h1 {
   text-align: center;
   margin-top: 20px;
   font-size: 2rem;
 }
 
+/* =========================
+   BUTTON THEME
+========================= */
+
+.theme-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  background: var(--card-bg);
+  color: var(--text-color);
+  box-shadow: 0 2px 10px var(--shadow);
+}
+
+/* =========================
+   GRID
+========================= */
 
 .film-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 28px; 
+  gap: 28px;
   padding: 40px;
   max-width: 1200px;
   margin: auto;
 }
 
+/* =========================
+   CARD
+========================= */
 
 .film-card {
   border-radius: 14px;
   overflow: hidden;
-  background: white;
+  background: var(--card-bg);
   text-align: center;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  box-shadow: 0 4px 14px var(--shadow);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   aspect-ratio: 3 / 4;
   display: flex;
   flex-direction: column;
 }
-
 
 .film-card img {
   width: 100%;
@@ -41,27 +93,24 @@ h1 {
   object-fit: cover;
 }
 
-
-.film-info {
-  padding: 10px 12px;
+.film-card h3 {
+  margin: 10px 0 5px;
 }
 
-.film-title {
-  font-size: 1rem;
-  margin: 5px 0;
-  font-weight: bold;
+.film-card p {
+  margin: 0;
+  opacity: 0.7;
 }
 
-.film-date {
-  color: #777;
-  font-size: 0.9rem;
-}
-
-
+/* hover */
 .film-card:hover {
   transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+  box-shadow: 0 10px 22px var(--shadow);
 }
+
+/* =========================
+   FILTER UI (si déjà ajouté)
+========================= */
 
 .filters {
   display: flex;
@@ -74,16 +123,15 @@ h1 {
   width: 300px;
   border-radius: 10px;
   border: 1px solid #ccc;
-  font-size: 1rem;
 }
 
+/* genres */
 .genres {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
   margin-bottom: 30px;
-  padding: 0 20px;
 }
 
 .genres button {
@@ -91,21 +139,21 @@ h1 {
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  background: #eaeaea;
-  font-family: inherit;
-  transition: background 0.3s, color 0.3s;
+  background: var(--card-bg);
+  color: var(--text-color);
 }
 
 .genres button:hover {
-  background: rgba(42, 50, 212, 0.808);
+  background: rgb(21, 19, 155);
   color: white;
 }
 
 .genres button.active {
-  background: rgb(42, 51, 212);
+  background: rgb(21, 19, 155);
   color: white;
 }
 
+/* no result */
 .no-result {
   text-align: center;
   font-size: 1.3rem;
