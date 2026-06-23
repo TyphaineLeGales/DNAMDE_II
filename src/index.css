@@ -93,10 +93,16 @@ h1 {
   cursor: pointer;
   background: #eaeaea;
   font-family: inherit;
+  transition: background 0.3s, color 0.3s;
+}
+
+.genres button:hover {
+  background: rgba(42, 50, 212, 0.808);
+  color: white;
 }
 
 .genres button.active {
-  background: black;
+  background: rgb(42, 51, 212);
   color: white;
 }
 
