@@ -62,3 +62,46 @@ h1 {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 10px 22px rgba(0,0,0,0.18);
 }
+
+.filters {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.filters input {
+  padding: 12px;
+  width: 300px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  padding: 0 20px;
+}
+
+.genres button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  background: #eaeaea;
+  font-family: inherit;
+}
+
+.genres button.active {
+  background: black;
+  color: white;
+}
+
+.no-result {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-top: 40px;
+}
