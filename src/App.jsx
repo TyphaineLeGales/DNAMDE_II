@@ -1,29 +1,28 @@
-//import { useState } from "react"
+import { useState } from "react";
 //import Card from "./Card"
-import CardList from "./CardList.jsx"
-import Filters from "./Filters.jsx"
-import "./app.css"
-import jsonFilm from "./assets/filmData.json?raw"
-
-
-
+import CardList from "./CardList.jsx";
+import Filters from "./Filters.jsx";
+import "./app.css";
+import jsonFilm from "./assets/filmData.json?raw";
 
 function App() {
+  const filmsData = JSON.parse(jsonFilm);
+  const filteredFilms = filmsData.filter((film) => film.Title.length > 20);
 
- // const[userInput, setUserInput] = useState()
- //const filteredFilms = 
+  const [userInput, setUserInput] = useState("");
 
-const filmsData =  JSON.parse(jsonFilm)
-const filteredFilms = filmsData.filter((film) => film.Title.length > 20)
-//console.log(filmsData)
+  function handleChange(e) {
+    setUserInput(e.target.value);
+  }
+
+  //console.log(filmsData)
 
   return (
-
     <div>
-      <Filters/>
-      <CardList films={filteredFilms}/>
+      <Filters inputChange={handleChange} /> 
+      <CardList films={filteredFilms} />
     </div>
-   /* <div className="movies-container">
+    /* <div className="movies-container">
 
 
       {filmsData.map(filmData => ( 
@@ -34,7 +33,7 @@ const filteredFilms = filmsData.filter((film) => film.Title.length > 20)
 
       
     </div>*/
-  )
+  );
 }
 
-export default App
+export default App;

@@ -2,12 +2,12 @@ import "./filters.css";
 //import jsonFilm from "./assets/filmData.json?raw";
 //const filmData =  JSON.parse(jsonFilm)
 
-function Filters() {
+function Filters(props) {
 
 return(
 
     <div className="filters-container">
-        <div className="searchbar">Search a movie <input className="input-field" type="text" /></div>
+        <div className="searchbar">Search a movie <input name="inputField" className="input-field" type="text" onChange={props.inputChange} /></div>
         <div className="filters-buttons-container">
             <button>All</button>
             <button>Action</button>
