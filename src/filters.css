@@ -1,0 +1,28 @@
+.filters-container{
+    margin-top: 100px;
+}
+
+.input-field{
+    width: 200px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 0px;
+}
+
+.filters-buttons-container{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+button{
+    border-radius: 20px;
+    padding: 10px 20px;
+    border: 0px;
+    background-color: rgb(255, 255, 255);
+}
+
+button:hover{
+    background-color: rgb(0, 0, 0);
+    color: white;
+}

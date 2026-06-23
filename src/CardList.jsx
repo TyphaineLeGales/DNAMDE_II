@@ -1,15 +1,16 @@
-import Card from"./card.css";
+import "./card.css";
+import Card from "./Card";
 
-import jsonFilm from "./assets/filmData.json?raw";
-const filmData =  JSON.parse(jsonFilm)
-
-function CardList({ films = filmData }) {
+//function CardList({ films = filmData }) {
+function CardList(props) {
+  console.log(props.films);
   return (
-  <div className="movies-container">
-    {films.map((filmData) => (
-      <Card data={filmData} />
-    ))}
-  </div>)
+    <div className="movies-container">
+      {props.films.map((filmData) => (
+        <Card data={filmData} />
+      ))}
+    </div>
+  );
 }
 
 export default CardList;
