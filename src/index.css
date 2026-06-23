@@ -13,6 +13,16 @@ html {
   width: 100%;
 }
 
+.light-theme{
+  background-color: white;
+  color:black;
+}
+
+.dark-theme{
+  background-color: rgb(14, 14, 14);
+  color:rgb(214, 214, 214);
+}
+
 #root {
   width: 100%;
   display: flex;

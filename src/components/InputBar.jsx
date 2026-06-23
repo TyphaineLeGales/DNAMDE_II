@@ -1,3 +1,5 @@
+import ThemeSelect from "./ThemeSelect";
+
 function InputBar(props) {
   return (
     <div className="nav">
@@ -8,6 +10,7 @@ function InputBar(props) {
         type="text"
         placeholder="Search a movie"
       ></input>
+      <ThemeSelect />
     </div>
   );
 }
