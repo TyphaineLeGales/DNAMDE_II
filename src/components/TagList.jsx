@@ -1,8 +1,19 @@
 import Tag from "./Tag";
-import data from "../assets/filmData.json";
-
+import { useState, useEffect } from "react";
 function TagList({onSelect}) {
-  const types = data.flatMap((film) => film.Genre.split(", "));
+
+    const [films, setFilms] = useState([]);
+  
+    useEffect(() => {
+      const url = "https://ghibliapi.vercel.app/films/";
+      fetch(url)
+        .then((response) => response.json())
+        .then((json) => {
+          setFilms(json);
+        });
+    }, []);
+
+  const types = films.flatMap((film) => film.producer.split(', '));
 
   const typesTag = [...new Set(types)];
 

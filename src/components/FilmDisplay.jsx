@@ -24,7 +24,6 @@ function FilmDisplay() {
   const handleChange = (e) => {
     e.preventDefault();
     setValue(e.target.value);
-    console.log(films);
   };
 
   const [selectedTags, setSelectedTags] = useState([]);
@@ -36,42 +35,31 @@ function FilmDisplay() {
   };
 
   const ghibliFilms = films.filter((film) => {
-    const matchesSearch = film.Title.toLowerCase().includes(
-      value.toLowerCase(),
-    );
-    const matchesTags =
-      selectedTags.length === 0 ||
-      selectedTags.every((tag) => film.p.includes(tag));
-    return matchesSearch && matchesTags;
+  const matchesSearch = film.title.toLowerCase().includes(value.toLowerCase());
+  const matchesTags =
+    selectedTags.length === 0 ||
+    selectedTags.every((tag) => film.producer.includes(tag));
+  return matchesSearch && matchesTags;
   });
 
-  const filteredFilms = data.filter((film) => {
-    const matchesSearch = film.Title.toLowerCase().includes(
-      value.toLowerCase(),
-    );
-    const matchesTags =
-      selectedTags.length === 0 ||
-      selectedTags.every((tag) => film.Genre.includes(tag));
-    return matchesSearch && matchesTags;
-  });
 
   return (
     <>
       <InputBar valueChange={handleChange}></InputBar>
       <TagList onSelect={handleTagSelect} />
       <div className="film-display">
-        {filteredFilms.length === 0 ? (
+        {ghibliFilms.length === 0 ? (
           <p>nothing found</p>
         ) : (
-          filteredFilms.map((film) => (
+          ghibliFilms.map((film) => (
             <FilmCard
-              key={film.Title}
-              preview={film.Images[0]}
-              title={film.Title}
-              date={film.Released}
-              rating={film.Metascore}
-              genre={film.Genre}
-              resume={film.Plot}
+              key={film.title}
+              preview={film.image}
+              title={film.title}
+              date={film.release_date}
+              rating={film.rt_score}
+              producer={film.producer}
+              resume={film.description}
             />
           ))
         )}
