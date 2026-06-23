@@ -2,11 +2,12 @@ import { useState } from "react";
 import MovieCard from "./movies";
 import moviesData from "./assets/filmData.json";
 import Filtres from "./filtre";
-import "./search.css"
+import "./index.css"
 
 function App() {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
+  const [darkMode, setDarkMode] = useState(false);
 
   const filteredMovies = moviesData.filter((movie) => {
     const titleMatch = movie.Title
@@ -21,7 +22,14 @@ function App() {
   });
 
   return (
-    <div>
+    <div className={darkMode ? "dark-mode" : ""}>
+      <button
+        className="theme-button"
+        onClick={() => setDarkMode(!darkMode)}
+      >
+        {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+      </button>
+
       <div className="search-container">
         <p>Search a movie</p>
 
