@@ -32,7 +32,7 @@ function App() {
 
   return (
     <div id='app'>
-      <button type='button' id='light-dark-button' onClick={handleLightDark}>Set Light/Dark</button>
+      {/* <button type='button' id='light-dark-button' onClick={handleLightDark}>Set Light/Dark</button> */}
       <input ref={input} type="search" id='searchbar' placeholder='Search For A Movie' onChange={handleSearch} />
       <div className='genre-chip-list'>
         { Array.from(genresSet).map((genre, i) => <GenreChip key={i} name={genre} selected={selectedGenre === genre} setSelectedGenreCallback={handleGenre}/>) }
