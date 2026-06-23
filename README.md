@@ -70,6 +70,33 @@ La 1ère solution c'est l'api de Contexte développée par React https://react.d
 *Concepts mobilisés : Context provider and consumer*  
 
 # V. FETCHING DATA FROM AN ACTUAL API
-*Concepts mobilisés : useEffect, hooks*  
 
-# VI. ANALYZING PERFORMANCE 
+Bon c'est super on peux faire des recherches dans notre fichier filmData.json mais dans la vrai vie de dev, on n'a pas souvent de la donnée dans des fichiers en local. Le schema le plus comment c'est de de voir faire des calls sur une API, c'est à dire requeter de la donnée sur un serveur tierce puis attendre qu'elle nous revienne avant d'affficher notre interface. 
+
+On va travailler avec l'api des studios Ghibli qui vont nous renvoyer de la même façon que filmData.json, un objet avec une liste de films.
+![Studio Ghibli](./public/ghibli.png)
+
+1. Requêter la donnée de la liste de films
+Remplacer dans votre code la donnée que vous passez à votre liste de films en utilisant l'endpoint suivant : https://ghibliapi.vercel.app/films/
+Faites attention à la structure de la donnée qui va changer, dans votre composant Card/Film, vous devrez probablement updater les noms des propriétés auxquelles vous accéder pour afficher les films.
+utiliser un state [films, setFilms] qui va se recevoir la donnée une fois la réponse du serveur envoyée. Au début c'est vide, quand le fetch répond, il contient la liste de film.
+
+Pour exécuter une fonction une fois quand la page charge, en React on utilise 
+```
+useEffect(() => {
+    // exécuter la fonction une seule fois
+    onStart()
+
+}, [])
+```
+Si on ne fait pas ça, ma fonction onStart va s'exécuter a chaque fois que le composant est rerender (dans notre exemple, a chaque fois que l'utilisateur rentre une valeur dans notre input de recherche)
+
+2. Mettre en place un composant Loading avec une grille de cards au fond gris
+![Fallback](./public/fallback.png)
+
+Au début mon state movies est vide. Si j'ai peu de réseau par exemple, ma page risque de rester vide assez longtemps ce qui crée une sensation de bug a l'utilisateur. Pour éviter ca, on utilise généralement des placeholders pour signaler que la page arrive. Dans l'écosystème React, on utilise le composant <Suspense> pour faire ça https://react.dev/reference/react/Suspense
+
+*Concepts mobilisés : fetch, useState, useEffect, hooks, suspense*  
+
+# VI. ANALYZING PERFORMANCE - DEBUGGING
+# VII. ANALYZING PERFORMANCE - DEBUGGING
