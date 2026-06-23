@@ -14,10 +14,11 @@ function App() {
   }
 
   const filteredFilms = filmsData.filter((film) =>
-    film.Title.toLowerCase().includes(userInput.toLowerCase())
+    film.Title.toLowerCase().includes(userInput.toLowerCase()) ||
+    String(film.Year).includes(userInput) 
   );
 
-  //console.log(filmsData)
+//const selectedGenre = 
 
   return (
     <div>
