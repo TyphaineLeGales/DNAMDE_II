@@ -7,19 +7,21 @@ import jsonFilm from "./assets/filmData.json?raw";
 
 function App() {
   const filmsData = JSON.parse(jsonFilm);
-  const filteredFilms = filmsData.filter((film) => film.Title.length > 20);
-
   const [userInput, setUserInput] = useState("");
 
   function handleChange(e) {
     setUserInput(e.target.value);
   }
 
+  const filteredFilms = filmsData.filter((film) =>
+    film.Title.toLowerCase().includes(userInput.toLowerCase())
+  );
+
   //console.log(filmsData)
 
   return (
     <div>
-      <Filters inputChange={handleChange} /> 
+      <Filters inputChange={handleChange} />
       <CardList films={filteredFilms} />
     </div>
     /* <div className="movies-container">
