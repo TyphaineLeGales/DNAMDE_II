@@ -1,20 +1,19 @@
 import Tag from "./Tag";
 import data from "../assets/filmData.json";
 
-function TagList(){
+function TagList() {
+  const types = data.flatMap((film) => film.Genre.split(", "));
 
-    const types = [];
+  const typesTag = [...new Set(types)];
 
-    data.forEach((film) => {
-        
-    })
-
-    console.log(types);
-
-
-    return(
-      <div className="tag-list"></div>
-    )
+  console.log(typesTag);
+  return (
+    <div className="tag-list">
+      {typesTag.map((filmType) => (
+        <Tag key={filmType} tag={filmType} />
+      ))}
+    </div>
+  );
 }
 
 export default TagList;

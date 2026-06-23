@@ -1,15 +1,21 @@
-import { useState } from "react"
+import { useState } from "react";
 
-function Tag(tag){
+function Tag(props) {
+  const [active, isActive] = useState(false);
 
-    const [active, isActive] = useState(false);
+  const handleClick = () => {
+    isActive(active => !active);
+    console.log(active);
+  };
 
-    const handleClick = () => {
-        !isActive ;
-    }
-    return(
-        <button className={isActive ? "tag-btn active" : "tag-btn"}>{tag}</button>
-    )
+  return (
+    <button
+      onClick={handleClick}
+      className={active ? "tag-btn active" : "tag-btn"}
+    >
+      {props.tag}
+    </button>
+  );
 }
 
 export default Tag;
