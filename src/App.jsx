@@ -18,7 +18,7 @@ function App() {
     String(film.Year).includes(userInput) 
   );
 
-//const selectedGenre = 
+//const selecteGenre = 
 
   return (
     <div>
