@@ -2,7 +2,7 @@ import CardList from './components/CardList';
 import GenreChip from './components/GenreChip'
 import filmData from './assets/filmData.json?raw';
 import './App.css'
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 let jsonData = JSON.parse(filmData);
 console.log(jsonData)
@@ -14,14 +14,22 @@ function App() {
   const [filtered, setFiltered] = useState(jsonData);
   const [selectedGenre, setSelectedGenre] = useState('All');
 
-  function handleSearch() {
-    console.log(input.current, input.current.value)
-    
-    setFiltered( jsonData.filter(entry => entry.Title.includes(input.current.value) && (selectedGenre === 'All' ? true : entry.Genre.includes(selectedGenre)) ) )
+
+  useEffect(() => {
+    handleSearch()
+  }, [selectedGenre])
+
+
+  function handleSearch(e, search = input.current.value, genre = selectedGenre) {
+    console.log(input.current, search, genre);
+
+    jsonData.forEach(entry => console.log(entry.Title.includes(search), (genre === 'All' ? true : entry.Genre.includes(genre))))
+    console.log(jsonData.filter(entry => (entry.Title.includes(search)) && (genre === 'All' ? true : entry.Genre.includes(genre)) ))
+    setFiltered( jsonData.filter(entry => entry.Title.toLowerCase().includes(search.toLowerCase()) && (genre === 'All' ? true : entry.Genre.includes(genre)) ) )
   }
 
   function handleGenre(value) {
-    setSelectedGenre(value)
+    setSelectedGenre(value);
   }
 
   const genres = filtered.map(card => card.Genre.split(', '));
@@ -32,7 +40,7 @@ function App() {
     <div id='app'>
       <input ref={input} type="search" id='searchbar' onChange={handleSearch}/>
       <div className='genre-chip-list'>
-        { Array.from(genresSet).map(genre => <GenreChip name={genre} selected={selectedGenre === genre} setSelectedGenreCallback={handleGenre}/>) }
+        { Array.from(genresSet).map((genre, i) => <GenreChip key={i} name={genre} selected={selectedGenre === genre} setSelectedGenreCallback={handleGenre}/>) }
       </div>
       <CardList cards={filtered}/>
     </div>
