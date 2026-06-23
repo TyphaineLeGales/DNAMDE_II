@@ -7,6 +7,8 @@
   --mono: ui-monospace, Consolas, monospace;
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
+    min-height: 100vh;
+    min-width: 100%;
 }
 
 
@@ -78,23 +80,50 @@ code {
 
 }
 
-.dark {
+.dark-mode {
   background-color: #121212;
   color: white;
   min-height: 100vh;
+  width: 100%;
 }
 
-.dark input {
+.dark-mode input {
   background-color: #2a2a2a;
   color: white;
 }
 
-.dark button {
+.dark-mode button {
   background-color: #2a2a2a;
   color: white;
 }
 
-.dark .movie-card {
+.dark-mode .movie-card {
   background-color: #2a2a2a;
   color: white;
+}
+
+.theme-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+
+  border: none;
+  border-radius: 999px;
+  padding: 10px 16px;
+
+  cursor: pointer;
+
+  background: #222;
+  border: solid 2px rgb(255, 255, 255);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: all 0.2s ease;
+  z-index: 1000;
+}
+
+.theme-button:hover {
+  transform: translateY(-2px);
+  background: #333;
 }

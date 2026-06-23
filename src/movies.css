@@ -40,3 +40,8 @@
 .plot {
   text-align: center;
 }
+
+.dark .movie-card {
+  background-color: #2a2a2a;
+  color: white;
+}

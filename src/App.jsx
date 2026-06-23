@@ -27,7 +27,7 @@ function App() {
         className="theme-button"
         onClick={() => setDarkMode(!darkMode)}
       >
-        {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+        {darkMode ? "☀️" : "🌙"}
       </button>
 
       <div className="search-container">
