@@ -1,4 +1,5 @@
 import MovieCard from "./movies";
+import "./search.css";
 import movies from "./assets/filmData.json";
 
 function App() {
