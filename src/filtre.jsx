@@ -1,3 +1,5 @@
+import "./filtre.css"
+
 function Filtres({ movies, category, setCategory }) {
   const categories = [
     ...new Set(

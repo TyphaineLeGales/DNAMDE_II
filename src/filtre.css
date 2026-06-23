@@ -1,0 +1,38 @@
+.category-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+
+.category-container button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+
+  background: #f1f1f1;
+  color: #333;
+
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+
+.category-container button:hover {
+  background: #ddd;
+  transform: scale(1.05);
+}
+
+
+.category-container button.active {
+  background: black;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+.category-container button:active {
+  transform: scale(0.95);
+}
