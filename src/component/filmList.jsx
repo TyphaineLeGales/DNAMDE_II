@@ -16,7 +16,7 @@ function FilmList (){
     //fonction pour selectionner le statue des genres
 
 
-
+// je sais qu'il faut utiliser suspense mais je n'y arrive vraiment pas. 
 
 
 
