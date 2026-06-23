@@ -69,7 +69,7 @@ La 1ère solution c'est l'api de Contexte développée par React https://react.d
 
 *Concepts mobilisés : Context provider and consumer*  
 
-# V. FETCHING DATA FROM AN ACTUAL API
+# V. REQUETER DE LA DONNEE VIA UNE API
 
 Bon c'est super on peux faire des recherches dans notre fichier filmData.json mais dans la vrai vie de dev, on n'a pas souvent de la donnée dans des fichiers en local. Le schema le plus comment c'est de de voir faire des calls sur une API, c'est à dire requeter de la donnée sur un serveur tierce puis attendre qu'elle nous revienne avant d'affficher notre interface. 
 
@@ -99,4 +99,5 @@ Au début mon state movies est vide. Si j'ai peu de réseau par exemple, ma page
 *Concepts mobilisés : fetch, useState, useEffect, hooks, suspense*  
 
 # VI. ANALYZING PERFORMANCE - DEBUGGING
-# VII. ANALYZING PERFORMANCE - DEBUGGING
+# VII. INTERMEDIATE REACT PATTERNS : HOOKS & REDUCERS
+# VIII. EXTERNAL STATE LIBRAIRIES - ZUSTAND & REDUX
