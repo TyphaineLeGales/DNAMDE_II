@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import filmData from './assets/filmData.json?raw';
-import FilmList from './components/filmList'
+import FilmList from './components/filmList';
 
 
 const jsonData = JSON.parse(filmData);
@@ -7,9 +8,20 @@ console.log(filmData)
 
 function App() {
 
+  //recherche
+  const [userInput, setUserInput] = useState("")
+  // const filteredFilms = jsonData.includes(userInput, setUserInput)
+  const filteredFilms = jsonData.filter((movie) => movie.Title.includes(userInput))
+
   return (
     <div className='films-container'>
-      <FilmList film={jsonData}/>
+      <div className='search-container'>
+        <label>
+          Rechercher un film :
+          <input className='search-input' value={userInput} onChange={e => setUserInput(e.target.value)}/>
+        </label>
+      </div>
+      <FilmList film={filteredFilms}/>
     </div>
   )
 

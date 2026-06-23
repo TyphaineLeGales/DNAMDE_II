@@ -1,17 +1,18 @@
 body{
   padding: 0;
-  font-family: "Bagel Fat One", system-ui;
-  font-weight: 400;
+  font-family: "Roboto", sans-serif;
 }
 
 h2{
   font-size: 21px;
   font-weight: bold;
+  text-align: center;
 }
 
 .film{
-  background-color: rgb(161, 181, 222);
-  border-radius: 6px;
+  background-color: rgb(218, 220, 225);
+  border-radius: 15px;
+  overflow: hidden;
   width: 350px;
 }
 
@@ -25,13 +26,17 @@ h2{
 .movie-poster-container{
   width: 100%;
   height: 40%;
-  overflow: hidden;
 }
 
 .movie-poster{
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.movie-genre{
+  text-align: center;
+  color: rgb(113, 113, 113);
 }
 
 .movie-infos{
@@ -41,4 +46,18 @@ h2{
 
 .movie_infos-container{
   padding: 10px;
+}
+
+.search-container{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.search-input{
+  margin-left: 10px;
+  background-color: rgb(220, 220, 220);
+  border: none;
+  border-radius: 8px;
+  height: 20px;
 }
