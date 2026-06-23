@@ -1,25 +1,25 @@
-function Film ({Title, Year, imbRating, Genre, Plot, Images}){
+function Film ({title, release_date, rt_score, running_time, description, image}){
     return (
         <div className="film-card">
             <div>
-                <img src={Images[0]} alt={Title}/>
+                <img src={image} alt={title}/>
             </div>
             <h2>
-                {Title}
+                {title}
             </h2>
             <div className="wrapp-year-rate"> 
                 <p>
-                    {Year}
+                    {release_date}
                 </p>
                 <p> 
-                ⭐ {imbRating}
+                ⭐ {rt_score}
                 </p>
             </div>
             <h3> 
-                {Genre}
+                {running_time}
             </h3>
             <p>
-                {Plot}
+                {description}
             </p>
         </div>
     )
