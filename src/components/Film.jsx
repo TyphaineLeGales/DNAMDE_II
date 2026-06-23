@@ -13,4 +13,6 @@ function Film({ Title, Year, Images, Genre,imdbRating, Plot}) {
   );
 }
 
+
+
 export default Film;

@@ -9,9 +9,9 @@
   letter-spacing: 0.18px;
 }
 
-*{
+/* *{
   border : 1px solid red ;
-}
+} */
 
 .film{
   border: 1px solid #08060d;
@@ -67,4 +67,9 @@ h3{
 
 .listedefilms{
     width: 100%;
+}
+
+.tags{
+  border: 1px solid #08060d;
+  border-radius: 15px;
 }

@@ -2,7 +2,6 @@ import filmData from '../assets/filmData.json';
 import Film from './Film';
 import './FilmList.css'
 
-
 function FilmList() {
   return (
     <div className="filmlist">
@@ -20,5 +19,7 @@ function FilmList() {
     </div>
   )
 }
+
+
 
 export default FilmList;
