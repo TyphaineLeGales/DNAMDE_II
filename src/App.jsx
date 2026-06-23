@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import filmData from './assets/filmData.json?raw';
 import FilmList from './components/filmList';
 
@@ -11,7 +11,11 @@ function App() {
   //recherche
   const [userInput, setUserInput] = useState("")
   // const filteredFilms = jsonData.includes(userInput, setUserInput)
-  const filteredFilms = jsonData.filter((movie) => movie.Title.includes(userInput))
+  const filteredFilms = jsonData.filter((movie) => movie.Title.toLowerCase().includes(userInput.toLowerCase()))
+
+  useEffect(() => {
+    filteredFilms
+  }, [userInput])
 
   return (
     <div className='films-container'>
