@@ -2,7 +2,7 @@ function Genres({genres}){
 return (
   <div className="genres">
     {genres.map((genres) => (
-    <span key={genres} className="tags">
+    <span key={genres} className="tags"> 
     {genres}
     </span> 
     ))}

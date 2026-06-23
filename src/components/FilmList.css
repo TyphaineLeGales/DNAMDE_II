@@ -65,11 +65,24 @@ h3{
   font-size: 16px;
 }
 
-.listedefilms{
-    width: 100%;
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
 }
 
 .tags{
-  border: 1px solid #08060d;
-  border-radius: 15px;
+  color: #353536;
+  background-color: #e7e3e3;
+  border-radius: 30px;
+  padding: 6px 12px;
+
 }
+
+.tags:hover{
+  background-color: #08060d;
+  color: white;
+  cursor: pointer;
+}
+

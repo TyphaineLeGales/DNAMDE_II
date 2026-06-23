@@ -13,7 +13,7 @@ function App() {
 
   const genres = [
     ...new Set(
-    filmData.flatMap((film) => film.Genre.split(", "))
+      filmData.flatMap((film) => film.Genre.split(", "))
     )
   ];
 
