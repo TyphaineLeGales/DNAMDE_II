@@ -28,6 +28,7 @@ function CardFilm({ film }) {
             <p>{film.release_date}</p>
             <p>⭐{film.rt_score}</p>
         </div>
+        <p className="film-genre">{film.producer}</p>
         <p className="film-resume">{film.description.slice(0, 150)}...</p>
         </div>
     );
