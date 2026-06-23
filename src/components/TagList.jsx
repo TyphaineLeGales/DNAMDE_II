@@ -1,5 +1,7 @@
 import Tag from "./Tag";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
+import Loading from "./Loading";
+
 function TagList({onSelect}) {
 
     const [films, setFilms] = useState([]);
@@ -19,9 +21,11 @@ function TagList({onSelect}) {
 
   return (
     <div className="tag-list">
-      {typesTag.map((filmType) => (
-        <Tag onSelect={onSelect} key={filmType} tag={filmType} />
-      ))}
+      <Suspense fallback={<Loading />}>
+        {typesTag.map((filmType) => (
+          <Tag onSelect={onSelect} key={filmType} tag={filmType} />
+        ))}
+      </Suspense>
     </div>
   );
 }
