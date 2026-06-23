@@ -15,7 +15,8 @@ function App() {
   // console.log(filter);
   
   const matchGenre = 
-  selectedGenre === "" || genres.includes(selectedGenre);
+  selectedGenre === ""  || genres.includes(selectedGenre);
+  
 
   return matchTitle && matchGenre;
   });
