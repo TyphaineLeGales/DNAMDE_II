@@ -1,4 +1,4 @@
-function FilmCard({ preview, title, date, rating, genre, resume }) {
+function FilmCard({ preview, title, date, rating, producer, resume }) {
   return (
     <div className="film-card">
       <img src={preview} className="film-image" alt={title} />
@@ -8,7 +8,7 @@ function FilmCard({ preview, title, date, rating, genre, resume }) {
           <p>{date}</p>
           <p>⭐ {rating}</p>
         </span>
-        <h2>{genre}</h2>
+        <h2>{producer}</h2>
         <p>{resume}</p>
       </div>
     </div>

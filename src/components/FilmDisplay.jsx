@@ -36,7 +36,13 @@ function FilmDisplay() {
   };
 
   const ghibliFilms = films.filter((film) => {
-    console.log(film);
+    const matchesSearch = film.Title.toLowerCase().includes(
+      value.toLowerCase(),
+    );
+    const matchesTags =
+      selectedTags.length === 0 ||
+      selectedTags.every((tag) => film.p.includes(tag));
+    return matchesSearch && matchesTags;
   });
 
   const filteredFilms = data.filter((film) => {
