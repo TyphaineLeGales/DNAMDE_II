@@ -5,7 +5,6 @@ import GenreList from './components/genreList'
 
 
 const jsonData = JSON.parse(filmData);
-console.log(filmData)
 
 function App() {
 
@@ -15,7 +14,8 @@ function App() {
   const filteredFilms = jsonData.filter((movie) => movie.Title.toLowerCase().includes(userInput.toLowerCase()))
 
   const genres = jsonData.map(film => film.Genre.split(";"));
-  const genresSet = new Set(['All', ...genres.flat()]);
+  const genresSet = [...new Set(['All', ...genres.flat()])];
+  console.log(new Set(['All', ...genres.flat()]))
 
   useEffect(() => {
     filteredFilms
