@@ -1,9 +1,12 @@
+import React from 'react';
+import Cinema from './components/cinema';
+
 function App() {
   return (
-    <div>
-      <h1> Hello 🌞 </h1>
-    </div>
-  )
+    <Cinema />
+  );
 }
 
-export default App
+export default App;
+
+// LOGIQUEMENT tt est bon, TOUCHE PAS ICI //
