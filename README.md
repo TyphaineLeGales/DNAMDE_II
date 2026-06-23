@@ -53,6 +53,8 @@ Attention : La grille doit être responsive et s'adapter au mobile
 La selection par genre doit se combiné à l'input de recherche par titre
 ![Tag Filter](./public/tag-filter.png)
 
+!Attention! dans la donnée, plusieurs genres sont dans une seule et meme chaine de charactères. Pour avoir un tableau avec tous les genres il faut que "Action, Adventure, Fantasy" devienne ["Action", "Adventure", "Fantasy"] afin de pouvoir accéder à chaque genre comme un élément individuel du tableau. Pour cela utiliser la méthode str.split() qui permet de découper une chaine de charactère. On passe dans la méthode un argument pour préciser ou on veut couper la chaine de charactère (ici après chaque virgule) donc film.Genre.split(",")
+
 
 # IV. CREATING A LIGHT & DARK THEME
 
