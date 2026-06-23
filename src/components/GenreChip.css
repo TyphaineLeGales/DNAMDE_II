@@ -1,0 +1,22 @@
+.genre-chip-list {
+  display: flex;
+  overflow-x: scroll;
+  width: var(--max-width-grid);
+  gap: 1rem;
+  scrollbar-width: thin;
+  padding-bottom: 0.5rem;
+  scrollbar-color: rgba(from var(--text-h) r g b / 0.2) transparent;
+}
+
+.genre-chip {
+  white-space: nowrap;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid var(--text-h);
+
+  &[data-selected='true'] {
+    order: -1;
+    color: var(--bg);
+    background-color: var(--text-h);
+  }
+}

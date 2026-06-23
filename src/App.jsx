@@ -20,21 +20,20 @@ function App() {
   }, [selectedGenre])
 
 
-  function handleSearch(e, search = input.current.value, genre = selectedGenre) {
-    setFiltered( jsonData.filter(entry => entry.Title.toLowerCase().includes(search.toLowerCase()) && (genre === 'All' ? true : entry.Genre.includes(genre)) ) )
-  }
+  const handleSearch = (e, search = input.current.value, genre = selectedGenre) =>
+    setFiltered( jsonData.filter(entry => entry.Title.toLowerCase().includes(search.toLowerCase()) && (genre === 'All' ? true : entry.Genre.includes(genre)) ) );
 
-  function handleGenre(value) { 
-    setSelectedGenre(value);
-  }
+  const handleGenre = (value) => setSelectedGenre(value);
+
+  const handleLightDark = (e) => console.log(e);
 
   const genres = filtered.map(card => card.Genre.split(', '));
   const genresSet = new Set(['All', ...genres.flat()]);
-  console.log(genresSet)
 
   return (
     <div id='app'>
-      <input ref={input} type="search" id='searchbar' placeholder='Search For A Movie' onChange={handleSearch}/>
+      <button type='button' id='light-dark-button' onClick={handleLightDark}>Set Light/Dark</button>
+      <input ref={input} type="search" id='searchbar' placeholder='Search For A Movie' onChange={handleSearch} />
       <div className='genre-chip-list'>
         { Array.from(genresSet).map((genre, i) => <GenreChip key={i} name={genre} selected={selectedGenre === genre} setSelectedGenreCallback={handleGenre}/>) }
       </div>

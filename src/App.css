@@ -14,25 +14,19 @@
   padding: 0 1rem;
 }
 
-.genre-chip-list {
-  display: flex;
-  /* justify-content: center; */
-  overflow-x: scroll;
-  width: var(--max-width-grid);
-  gap: 1rem;
-  scrollbar-width: thin;
-  padding-bottom: 0.5rem;
-  scrollbar-color: rgba(from var(--text-h) r g b / 0.2) transparent;
-}
-
-.genre-chip {
-  white-space: nowrap;
+#light-dark-button {
+  --offset: 1rem;
+  position: absolute;
+  top: var(--offset);
+  right: var(--offset);
   padding: 0.5rem 1rem;
+  border: 1px solid var(--text-h);
   border-radius: 20px;
-  border: 1px solid white;
+  
+  /* background-image: url('https://api.iconify.design/streamline-ultimate:light-mode-bright-dark-bold.svg');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat; */
 
-  &[data-selected='true'] {
-    color: var(--bg);
-    background-color: var(--text-h);
-  }
+  /* width: 2rem; */
 }

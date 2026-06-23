@@ -1,4 +1,4 @@
-import './CardList.css';
+import './GenreChip.css';
 
 export default function GenreChip(props) {
   const handleCallback = () => props.setSelectedGenreCallback(props.name)
