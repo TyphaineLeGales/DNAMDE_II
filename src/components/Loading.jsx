@@ -1,6 +1,10 @@
 function Loading() {
-
-  return <h1>LOAAAAADING</h1>;
+  console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+  return (
+    <div className="loading">
+      AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    </div>
+  );
 }
 
 export default Loading;
