@@ -5,21 +5,15 @@ import jsonFilm from "./assets/filmData.json";
 
 function Filters(props) {
 
-    function handleSelected(id){
-        
-        console.log(id)
-        
-
-    }
 
 
-const genres = jsonFilm.flatMap((film)=> film.Genre.split(",")) //map c'est une fonction qui pour tout les 
+
+const genres = jsonFilm.flatMap((film)=> film.Genre.split(", ")) //map c'est une fonction qui pour tout les 
 // flatMap permet d'enlever une couche de tableau, si on a un tableau dans un tableau
 // split s'appele sur une chaine de caractere et prends en parametre là ou on veut couper
 
-//console.log("genres", genres)
 
-const chips = new Set ([...genres]) //permet de ne garder qu'une seule ittération par genre
+const chips = [...new Set(genres)] //permet de ne garder qu'une seule ittération par genre
 
 
 console.log("chips",chips)
@@ -34,7 +28,7 @@ return(
         {chips.map(genre => <GenreChips genre={genre}/>)} 
 
 
-
+{/* 
             <button onClick={() => handleSelected('all')} >All</button>
             <button onClick={() => handleSelected('Action')}>Action</button>
             <button onClick={() => handleSelected('Adventure')}>Adventure</button>
@@ -46,7 +40,7 @@ return(
             <button onClick={() => handleSelected('Biopic')}>Biopic</button>
             <button onClick={() => handleSelected('Comedy')}>Comedy</button>
             <button onClick={() => handleSelected('Crime')}>Crime</button>
-            <button onClick={() => handleSelected('History')}>Hystory</button>
+            <button onClick={() => handleSelected('History')}>Hystory</button> */}
 
 
         </div>

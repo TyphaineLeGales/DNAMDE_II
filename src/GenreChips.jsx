@@ -1,6 +1,13 @@
 import './filters.css';
+
 export default function GenreChips(props) {
+    function handleSelected(id){
+        
+        console.log(id)
+        
+
+    }
     return (
-    <h1>{props.genre}</h1>
+    <button onClick={() => handleSelected('selection')}>{props.genre}</button>
       );
 }
