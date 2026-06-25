@@ -11,15 +11,16 @@ function Filters(props) {
         
 
     }
+console.log("jsonFilm", jsonFilm)
 
 
 const genres = jsonFilm.flatMap((film)=> film.Genre.split(",")) //map c'est une fonction qui pour tout les 
 // flatMap permet d'enlever une couche de tableau, si on a un tableau dans un tableau
 // split s'appele sur une chaine de caractere et prends en parametre là ou on veut couper
 
-//console.log("genres", genres)
+console.log("genres", genres)
 
-const chips = new Set ([...genres]) //permet de ne garder qu'une seule ittération par genre
+const chips = [...new Set(genres)] //permet de ne garder qu'une seule ittération par genre
 
 
 console.log("chips",chips)
