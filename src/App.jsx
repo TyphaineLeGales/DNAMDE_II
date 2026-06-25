@@ -1,9 +1,9 @@
 import { useState } from "react";
-import MovieCard from "./movies";
+import MovieCard from "./compoments/movies";
 import moviesData from "./assets/filmData.json";
-import Filtres from "./filtre";
-import "./index.css"
-import "./search.css"
+import Filtres from "./compoments/filtre";
+import "./compoments/filtre.css"
+import "./compoments/search.css"
 
 
 function App() {
