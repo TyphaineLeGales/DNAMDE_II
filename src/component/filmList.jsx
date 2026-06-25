@@ -10,9 +10,9 @@ import { useState, useEffect } from "react" // import pour se souvenir
 function FilmList (){
     const [filmData, setFilmData] = useState([])
     const [search, setSearch] = useState("")
-    //const genresUniques = [...new Set(filmData.map((unFilm) => unFilm.Genre.split(",")).flat())]
+    const producerUniques = [...new Set(filmData.map((unFilm) => unFilm.producer.split(",")).flat())]
     //ci dessus cela créer un tableau sans doublon des genre
-    //const [selectedGenre, setSelectedGenre] = useState("All")
+    const [selectedProducer, setSelectedProducer] = useState("All")
     //fonction pour selectionner le statue des genres
 
 
@@ -38,26 +38,26 @@ function FilmList (){
             value={search}
             onChange={(e)=> setSearch(e.target.value)}/>
         </div>
-        {/* <div className="wrapp-button"> 
-            <button onClick={()=> setSelectedGenre("All")}
-                className={selectedGenre === "All" ? "button-choice selected" : "button-choice"}>All</button>
-            {genresUniques.map((unGenre)=> (
-                <button key={unGenre}
-                onClick={(e)=> setSelectedGenre(unGenre)}
-                className={selectedGenre === unGenre ? "button-choice selected" : "button-choice"}
-                >{unGenre}
+        { <div className="wrapp-button"> 
+            <button onClick={()=> setSelectedProducer("All")}
+                className={setSelectedProducer === "All" ? "button-choice selected" : "button-choice"}>All</button>
+            {producerUniques.map((unProducer)=> (
+                <button key={unProducer}
+                onClick={(e)=> setSelectedProducer(unProducer)}
+                className={selectedProducer === unProducer ? "button-choice selected" : "button-choice"}
+                >{unProducer}
                 </button>
             ))}
-        </div> */}
+        </div> }
         <div className="grid-container">
-            { filmData.filter((unFilm)=> unFilm.title.toLowerCase().includes(search.toLowerCase()) //&& (selectedGenre === "All" || unFilm.Genre.includes(selectedGenre))
+            { filmData.filter((unFilm)=> unFilm.title.toLowerCase().includes(search.toLowerCase()) && (selectedProducer === "All" || unFilm.producer.includes(selectedProducer))
             ).map((unFilm) => (
                 <Film 
                 key={unFilm.title}
                 title={unFilm.title}
-                release_date= {unFilm.release_date}
+                producer={unFilm.producer}
                 rt_score={unFilm.rt_score}
-                // Genre= {unFilm.Genre}
+                producer= {unFilm.producer}
                 description={unFilm.description}
                 image={unFilm.image} />
 

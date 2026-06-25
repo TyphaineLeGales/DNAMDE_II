@@ -1,4 +1,4 @@
-function Film ({title, release_date, rt_score, running_time, description, image}){
+function Film ({title, producer, rt_score, running_time, description, image}){
     return (
         <div className="film-card">
             <div>
@@ -9,7 +9,7 @@ function Film ({title, release_date, rt_score, running_time, description, image}
             </h2>
             <div className="wrapp-year-rate"> 
                 <p>
-                    {release_date}
+                    {producer}
                 </p>
                 <p> 
                 ⭐ {rt_score}
