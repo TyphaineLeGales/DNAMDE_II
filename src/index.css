@@ -90,3 +90,13 @@ h2{
   gap: 15px;
   margin-bottom: 10px;
 }
+
+.theme-btn{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 20px;
+    background-color: rgb(40, 40, 40);
+    color: white;
+    padding: 0 15px;
+}

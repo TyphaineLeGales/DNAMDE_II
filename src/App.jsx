@@ -49,6 +49,10 @@ function App() {
       </div>
       <GenreList genre={genresSet} setSelectedGenre={setSelectedGenre} selectedGenre={selectedGenre}/>
       <FilmList film={filteredFilms}/>
+      
+      <button className="theme-btn">
+          <p>Dark mode</p>
+      </button>
     </div>
   )
 
