@@ -41,7 +41,7 @@
   text-align: center;
 }
 
-.dark .movie-card {
+.dark-mode .movie-card {
   background-color: #2a2a2a;
   color: white;
 }

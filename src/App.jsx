@@ -3,6 +3,8 @@ import MovieCard from "./movies";
 import moviesData from "./assets/filmData.json";
 import Filtres from "./filtre";
 import "./index.css"
+import "./search.css"
+
 
 function App() {
   const [search, setSearch] = useState("");

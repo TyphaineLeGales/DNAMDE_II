@@ -9,6 +9,10 @@
   letter-spacing: 0.18px;
 }
 
+.dark-mode {
+  --text-h: white;
+}
+
 
 body {
   margin: 0;
