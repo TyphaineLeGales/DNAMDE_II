@@ -1,27 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MovieCard from "./compoments/movies";
-import moviesData from "./assets/filmData.json";
-import Filtres from "./compoments/filtre";
-import "./compoments/filtre.css"
-import "./compoments/search.css"
-
+import "./compoments/search.css";
 
 function App() {
+  const [films, setFilms] = useState([]);
   const [search, setSearch] = useState("");
-  const [category, setCategory] = useState("");
   const [darkMode, setDarkMode] = useState(false);
 
-  const filteredMovies = moviesData.filter((movie) => {
-    const titleMatch = movie.Title
-      .toLowerCase()
-      .includes(search.toLowerCase());
+  useEffect(() => {
+    fetch("https://ghibliapi.vercel.app/films")
+      .then((response) => response.json())
+      .then((data) => setFilms(data))
+      .catch((error) => console.error(error));
+  }, []);
 
-    const categoryMatch =
-      !category ||
-      movie.Genre.toLowerCase().includes(category.toLowerCase());
-
-    return titleMatch && categoryMatch;
-  });
+  const filteredMovies = films.filter((movie) =>
+    movie.title.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
     <div className={darkMode ? "dark-mode" : ""}>
@@ -33,7 +28,7 @@ function App() {
       </button>
 
       <div className="search-container">
-        <p>Search a movie</p>
+        <h1>Search a movie</h1>
 
         <input
           type="text"
@@ -42,15 +37,12 @@ function App() {
         />
       </div>
 
-      <Filtres
-        movies={moviesData}
-        category={category}
-        setCategory={setCategory}
-      />
-
       <div className="movies-container">
-        {filteredMovies.map((movie, index) => (
-          <MovieCard key={index} movie={movie} />
+        {filteredMovies.map((movie) => (
+          <MovieCard
+            key={movie.id}
+            movie={movie}
+          />
         ))}
       </div>
     </div>
