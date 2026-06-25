@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import FilmCard from "./FilmCard";
 import InputBar from "./InputBar";
 import TagList from "./TagList";
@@ -47,26 +46,26 @@ function FilmDisplay() {
   return (
     <>
       <InputBar valueChange={handleChange}></InputBar>
-      <Suspense fallback={<Loading />}>
-        <TagList onSelect={handleTagSelect} />
-        <div className="film-display">
-          {dataLoad && ghibliFilms.length === 0 ? (
-            <p>nothing found</p>
-          ) : (
-            ghibliFilms.map((film) => (
-              <FilmCard
-                key={film.title}
-                preview={film.image}
-                title={film.title}
-                date={film.release_date}
-                rating={film.rt_score}
-                producer={film.producer}
-                resume={film.description.substring(0, 120) + "..."}
-              />
-            ))
-          )}
-        </div>
-      </Suspense>
+      <TagList onSelect={handleTagSelect} />
+      <div className="film-display">
+        {!dataLoad ? (
+          <Loading />
+        ) : ghibliFilms.length === 0 ? (
+          <p>nothing found</p>
+        ) : (
+          ghibliFilms.map((film) => (
+            <FilmCard
+              key={film.title}
+              preview={film.image}
+              title={film.title}
+              date={film.release_date}
+              rating={film.rt_score}
+              producer={film.producer}
+              resume={film.description.substring(0, 120) + "..."}
+            />
+          ))
+        )}
+      </div>
     </>
   );
 }
