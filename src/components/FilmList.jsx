@@ -1,35 +1,29 @@
 import { useEffect, useState } from "react";
 import Film from "./Film";
-import film from "../../public/filmData.json"
+import Loading from "./Loading";
 
 export default function FilmList() {
   const [films, setFilms] = useState([]);
   const [search, setSearch] = useState("");
-  const [selectedGenre, setSelectedGenre] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/filmData.json")
+    /*fetch("/filmData.json")*/
+    fetch("https://ghibliapi.vercel.app/films")
       .then((res) => res.json())
-      .then((data) => setFilms(data));
+      .then((data) => {
+        setFilms(data);
+        setLoading(false);
+      });
   }, []);
 
-  const genres = [
-    ...new Set(
-      films.flatMap((film) => film.Genre.split(", "))
-    ),
-  ];
+  const filteredFilms = films.filter((film) =>
+    film.title.toLowerCase().includes(search.toLowerCase())
+  );
 
-  const filteredFilms = films.filter((film) => {
-    const matchTitle = film.Title
-      .toLowerCase()
-      .includes(search.toLowerCase());
-
-    const matchGenre =
-      selectedGenre === "" ||
-      film.Genre.includes(selectedGenre);
-
-    return matchTitle && matchGenre;
-  });
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <>
@@ -42,37 +36,18 @@ export default function FilmList() {
         />
       </div>
 
-      <div className="genres">
-        <button
-          className={selectedGenre === "" ? "active" : ""}
-          onClick={() => setSelectedGenre("")}
-        >
-          Tous
-        </button>
-
-        {genres.map((genre) => (
-          <button
-            key={genre}
-            className={selectedGenre === genre ? "active" : ""}
-            onClick={() => setSelectedGenre(genre)}
-          >
-            {genre}
-          </button>
-        ))}
-      </div>
-
       {filteredFilms.length === 0 ? (
-        <p className="no-result">Aucun résultat 💩</p>
+        <p className="no-result">No movies found</p>
       ) : (
         <div className="film-grid">
           {filteredFilms.map((film) => (
             <Film
-              key={film.imdbID}
-              title={film.Title}
-              year={film.Year}
-              image={film.Poster || film.Images?.[0]}
-              rating={film.imdbRating}
-              plot={film.Plot}
+              key={film.id}
+              title={film.title}
+              year={film.release_date}
+              image={film.image}
+              rating={film.rt_score}
+              plot={film.description}
             />
           ))}
         </div>
