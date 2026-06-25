@@ -56,7 +56,7 @@ La selection par genre doit se combiné à l'input de recherche par titre
 !Attention! dans la donnée, plusieurs genres sont dans une seule et meme chaine de charactères. Pour avoir un tableau avec tous les genres il faut que "Action, Adventure, Fantasy" devienne ["Action", "Adventure", "Fantasy"] afin de pouvoir accéder à chaque genre comme un élément individuel du tableau. Pour cela utiliser la méthode str.split() qui permet de découper une chaine de charactère. On passe dans la méthode un argument pour préciser ou on veut couper la chaine de charactère (ici après chaque virgule) donc film.Genre.split(",")
 
 
-# IV. CREATING A LIGHT & DARK THEME
+# IV. LIGHT ☀️ & DARK 🌚 THEME
 
 1. Créer un toggle dark / light pour changer le theme de l'UI. Le state de valeur du thème devra etre créer dans App à la racine de votre application react pour pouvoir etre passé a l'ensemble des composants. Penser a utiliser les variables CSS pour modifier les valeurs de couleur de fonds et de text.
 ![Dark theme](./public/dark-theme.png)
@@ -94,20 +94,29 @@ Si on ne fait pas ça, ma fonction onStart va s'exécuter a chaque fois que le c
 2. Mettre en place un composant Loading avec une grille de cards au fond gris
 ![Fallback](./public/fallback.png)
 
-Au début mon state movies est vide. Si j'ai peu de réseau par exemple, ma page risque de rester vide assez longtemps ce qui crée une sensation de bug a l'utilisateur. Pour éviter ca, on utilise généralement des placeholders pour signaler que la page arrive. Dans l'écosystème React, on utilise le composant <Suspense> pour faire ça https://react.dev/reference/react/Suspense
+Au début mon state movies est vide. Si j'ai peu de réseau par exemple, ma page risque de rester vide assez longtemps ce qui crée une sensation de bug a l'utilisateur. Pour éviter ca, on utilise généralement des placeholders pour signaler que la page arrive. Utiliser un state isLoading quand la donnée est encore un train de charger.
 
-*Concepts mobilisés : fetch, useState, useEffect, hooks, suspense*  
+*Concepts mobilisés : fetch, useState, useEffect*  
 
-# VI. ADD FAVORITES
+# VI. FAVORIS ❤️
 1. rajouter un bouton favorites sur vos Cards
 
 2. rajouter un header qui vous permet de switcher entre la page search et la page Favoris qui liste les films que vous avez marqué en Favoris (réutiliser votre composant filmList a l'intérieur de votre composant Favorites)
 ![Search](./public/page-search.png)
 ![Favoris](./public/page-favoris.png)
 
+Votre structure de code devra etre modifié pour que App render soit un composant Search (toute votre logique jusqu'à présent, soit un composant Favorites)
+
 3. Stocker les favoris dans le local storage pour les retrouver meme après avoir rouvert la page en utilisant localStorage.setItem
+https://developer.mozilla.org/fr/docs/Web/API/Window/localStorage
 
 
+4. Utiliser useRef et useEffect pour que quand vous arrivez sur la page search, l'input s'auto-focus (pas besoin de cliquer dessus, vous arrivez sur search vous devez pouvoir taper votre recherche direct)
+Petite aide searchInputRef.current.focus(); doit s'appeler chaque fois que votre composant s'affiche sur la page.
+
+5. 
+
+*Concepts mobilisés : localStorage, useRefs*  
 
 # VII. INTERMEDIATE REACT PATTERNS : HOOKS & REDUCERS
 # VIII. EXTERNAL STATE LIBRAIRIES - ZUSTAND & REDUX
