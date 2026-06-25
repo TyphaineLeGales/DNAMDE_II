@@ -1,8 +1,30 @@
 function Loading() {
-  console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
   return (
     <div className="loading">
-      AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+      <div className="loading-card">
+        <span className="load-img">
+
+        </span>
+        <span className="load-title"></span>
+      </div>
+        <div className="loading-card">
+        <span className="load-img">
+
+        </span>
+        <span className="load-title"></span>
+      </div>
+        <div className="loading-card">
+        <span className="load-img">
+
+        </span>
+        <span className="load-title"></span>
+      </div>
+        <div className="loading-card">
+        <span className="load-img">
+
+        </span>
+        <span className="load-title"></span>
+      </div>
     </div>
   );
 }

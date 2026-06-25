@@ -47,13 +47,14 @@ function FilmDisplay() {
     <>
       <InputBar valueChange={handleChange}></InputBar>
       <TagList onSelect={handleTagSelect} />
-      <div className="film-display">
-        {!dataLoad ? (
-          <Loading />
-        ) : ghibliFilms.length === 0 ? (
-          <p>nothing found</p>
-        ) : (
-          ghibliFilms.map((film) => (
+
+      {!dataLoad ? (
+        <Loading />
+      ) : ghibliFilms.length === 0 ? (
+        <p>nothing found</p>
+      ) : (
+        <div className="film-display">
+          {ghibliFilms.map((film) => (
             <FilmCard
               key={film.title}
               preview={film.image}
@@ -63,9 +64,9 @@ function FilmDisplay() {
               producer={film.producer}
               resume={film.description.substring(0, 120) + "..."}
             />
-          ))
-        )}
-      </div>
+          ))}
+        </div>
+      )}
     </>
   );
 }
