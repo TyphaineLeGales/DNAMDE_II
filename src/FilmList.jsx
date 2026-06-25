@@ -5,8 +5,8 @@ import Film from "./Film";
 function FilmList() {
   const [search, setSearch] = useState("");
   const [selectedGenre, setSelectedGenre] = useState("All");
+  const [favorites, setFavorites] = useState([]);
 
-  // Récupère tous les genres sa
   const genres = [
     "All",
     ...new Set(
@@ -16,7 +16,16 @@ function FilmList() {
     ),
   ];
 
-  // Filtre recherche + genre
+  const toggleFavorite = (movieId) => {
+    if (favorites.includes(movieId)) {
+      setFavorites(
+        favorites.filter((id) => id !== movieId)
+      );
+    } else {
+      setFavorites([...favorites, movieId]);
+    }
+  };
+
   const filteredMovies = filmData.filter((film) => {
     const matchTitle = film.Title
       .toLowerCase()
@@ -29,14 +38,20 @@ function FilmList() {
     return matchTitle && matchGenre;
   });
 
+  const favoriteMovies = filmData.filter((film) =>
+    favorites.includes(film.imdbID)
+  );
+
   return (
     <>
       <div className="search">
         <input
           type="text"
-          placeholder="Search a movie"
+          placeholder="Search a movie..."
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) =>
+            setSearch(e.target.value)
+          }
         />
       </div>
 
@@ -45,14 +60,47 @@ function FilmList() {
           <button
             key={genre}
             className={
-              selectedGenre === genre ? "tag active" : "tag"
+              selectedGenre === genre
+                ? "tag active"
+                : "tag"
             }
-            onClick={() => setSelectedGenre(genre)}
+            onClick={() =>
+              setSelectedGenre(genre)
+            }
           >
             {genre}
           </button>
         ))}
       </div>
+
+      {favoriteMovies.length > 0 && (
+        <>
+          <h2 className="section-title">
+            Mes favoris
+          </h2>
+
+          <div className="film-grid">
+            {favoriteMovies.map((film) => (
+              <Film
+                key={film.imdbID}
+                title={film.Title}
+                year={film.Year}
+                poster={film.Poster}
+                genre={film.Genre}
+                rating={film.imdbRating}
+                isFavorite={true}
+                toggleFavorite={() =>
+                  toggleFavorite(film.imdbID)
+                }
+              />
+            ))}
+          </div>
+        </>
+      )}
+
+      <h2 className="section-title">
+        Tous les films
+      </h2>
 
       {filteredMovies.length > 0 ? (
         <div className="film-grid">
@@ -61,17 +109,25 @@ function FilmList() {
               key={film.imdbID}
               title={film.Title}
               year={film.Year}
-              poster={film.Images[0]}
+              poster={film.Poster}
               genre={film.Genre}
               rating={film.imdbRating}
+              isFavorite={favorites.includes(
+                film.imdbID
+              )}
+              toggleFavorite={() =>
+                toggleFavorite(film.imdbID)
+              }
             />
           ))}
         </div>
       ) : (
-        <h2 className="no-movie">No movie found 😢</h2>
+        <h2 className="no-movie">
+          No movie found 😢
+        </h2>
       )}
     </>
   );
 }
 
-export default FilmList;
+export default FilmList; 

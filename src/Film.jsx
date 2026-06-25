@@ -1,6 +1,21 @@
-function Film({ title, year, poster, genre, rating }) {
+function Film({
+  title,
+  year,
+  poster,
+  genre,
+  rating,
+  isFavorite,
+  toggleFavorite,
+}) {
   return (
     <div className="film-card">
+      <button
+        className="favorite-btn"
+        onClick={toggleFavorite}
+      >
+        {isFavorite ? "❤️" : "🤍"}
+      </button>
+
       <img src={poster} alt={title} />
 
       <div className="film-content">
@@ -8,12 +23,12 @@ function Film({ title, year, poster, genre, rating }) {
 
         <div className="film-info">
           <div className="info-box">
-            <span className="info-label">ANNEE</span>
+            <span className="info-label">YEAR</span>
             <span className="info-value">{year}</span>
           </div>
 
           <div className="info-box">
-            <span className="info-label">NOTE</span>
+            <span className="info-label">RATING</span>
             <span className="info-value">⭐ {rating}</span>
           </div>
         </div>
