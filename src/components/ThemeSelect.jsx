@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function ThemeSelect() {
   const [active, setActive] = useState(true);
-  const themeActive = ["Light", "Dark"];
+  const themeActive = ["Dark", "Light"];
 
   const handleClick = (event) => {
     event.preventDefault();
