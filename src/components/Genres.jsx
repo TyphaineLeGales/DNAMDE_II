@@ -1,11 +1,11 @@
-function Genres({genres, selectedGenre, setselectedGenre}){
+function Genres({genres, selectedGenre, setSelectedGenre}){
 return (
   <div className="genres">
     {genres.map((genres) => (
     <span
     key={genres} className="tags"
     onClick={() => 
-    setselectedGenre(
+    setSelectedGenre(
     genres === selectedGenre ? "" : genres
     )
     }
