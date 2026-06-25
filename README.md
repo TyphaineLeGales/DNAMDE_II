@@ -129,6 +129,22 @@ https://react.dev/learn/manipulating-the-dom-with-refs
 
 # VII. REACT ROUTER 
 
+on a vue la différence tout à l'heure entre une SPA (Single Page Application) et une site web classique qui renvoie des pages après une requête serveur a chaque navigation.
+En React, on ne load un html qu'une fois et tout le reste est géré par le JS. On update l'UI on en refait pas de requête au serveur. Mais les utilisateurices sont habitué.e.s a la navigation par l'URL, c'est un standard du web. On utilise donc la librairie react-router pour "simuler" le comportement du web classique. 
+
+1. installer react-router
+depuis la racine de votre dossier (la ou il y a package.json)
+```
+npm install react-router-dom 
+```
+
+2. naviguer entre http://localhost:5173/search et http://localhost:5173//favorites
+Les composants Router et Routes de la librairie vont vous permettre de sync l'url avec votre navigation. Au lieu de switcher entre Search et Favorites sans modifications, on doit voir le changement dans l'url quand on passe d'une page a l'autre.
+
+ressource pour comprendre react router 👉 https://fireship.dev/react-router-tutorial
+
+3. Afficher une page http://localhost:5173/movie/movieID 
+Ajouter une route pour pouvoir afficher tous les détails d'un film en se servant de son id
 ---
 
 pour après : custom hooks, reducers, state management librairies (zustand || Redux)
