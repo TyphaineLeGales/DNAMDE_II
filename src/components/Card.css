@@ -56,3 +56,18 @@
     white-space: preserve nowrap;
   }
 }
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.tag {
+  background-color: #eee;
+  color: #333;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
