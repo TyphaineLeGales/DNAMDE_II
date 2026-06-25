@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Avatar",
+    "year": 2009,
+    "genres": ["Action", "Adventure", "Fantasy"],
+    "synopsis": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between...",
+    "image": "https://blog.teufelaudio.fr/wp-content/uploads/2022/10/avatar-pandora-film-IMAGO.jpg",
+    "rating": 7.9
+  },
+  {
+    "id": 2,
+    "title": "I Am Legend",
+    "year": 2007,
+    "genres": ["Drama", "Horror", "Sci-Fi"],
+    "synopsis": "Years after a plague kills most of humanity and transforms the rest into monsters, the sole survivor in...",
+    "image": "https://m.media-amazon.com/images/S/pv-target-images/3bcfd80df424f8bbc095437d4cdce92ea16ed94963f4ad5ca0243847da22803d._SX1080_FMjpg_.jpg",
+    "rating": 7.2
+  },
+  {
+    "id": 3,
+    "title": "300",
+    "year": 2006,
+    "genres": ["Action", "Drama", "Fantasy"],
+    "synopsis": "King Leonidas of Sparta and a force of 300 men fight the Persians at Thermopylae in 480 B.C.",
+    "image": "https://static.europe1.fr/var/europe1/storage/media/image/2024/11/13/18/les-origines-du-film-300.jpg",
+    "rating": 7.7
+  },
+  {
+    "id": 4,
+    "title": "The Avengers",
+    "year": 2012,
+    "genres": ["Action", "Sci-Fi", "Thriller"],
+    "synopsis": "Earth's mightiest heroes must come together and learn to fight as...",
+    "image": "https://variety.com/wp-content/uploads/2014/04/01-avengers-2012.jpg?w=1000&h=667&crop=1",
+    "rating": 8.1
+  },
+  {
+    "id": 5,
+    "title": "The Wolf of Wall Street",
+    "year": 2013,
+    "genres": ["Biography", "Comedy", "Crime"],
+    "synopsis": "Based on the true story of Jordan Belfort from his rise to a wealth...",
+    "image": "https://img10.hotstar.com/image/upload/f_auto,q_auto/sources/r1/cms/prod/5459/1771850035459-i",
+    "rating": 8.2
+  },
+  {
+    "id": 6,
+    "title": "Interstellar",
+    "year": 2014,
+    "genres": ["Adventure", "Drama", "Sci-Fi"],
+    "synopsis": "A team of explorers travel through a wormhole in space in an attempt...",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJR03Z1kE54bfnd_4K5V_dan7jyvPkGWj2h-Sc4SUhCODlvHYKcrzSjUs&s=10",
+    "rating": 8.6
+  }
+]
