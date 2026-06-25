@@ -1,0 +1,87 @@
+section {
+  width: 80%;
+  height: 100vh;
+  display: grid;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 8%;
+}
+
+.poster-container {
+  width: 100%;
+  height: auto;
+  border-radius: 15%;
+}
+.svg-mask {
+  position: absolute;
+  top: 999px;
+  left: 999px;
+  width: 0;
+  height: 0;
+}
+
+figure {
+  transition: all ease-in 0.3s;
+  border-radius: 5%;
+  padding: 13%;
+  transform-origin: center;
+}
+
+figure:hover {
+  padding: 9%;
+}
+
+img {
+  aspect-ratio: 1/1;
+  transition: all ease-in 0.3s;
+  align-content: end;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transform-origin: center;
+}
+
+.group:hover img {
+  transform: scale(1.1);
+}
+
+.heart-btn {
+  width: 50px;
+  height: 50px;
+  display:flex;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  position: relative;
+  left: 80%;
+  top: -5%;
+  transition: transform 0.2s ease-in;
+}
+
+.heart-btn:hover{
+    transform: scale(1.05);
+}
+
+@media (max-width: 1000px) {
+  section {
+    width: 90%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction:row;
+    margin-top: 5%;
+  }
+
+  .poster-container {
+    width:25rem;
+    height: auto;
+    border-radius: 15%;
+  }
+}
+
+/*  */

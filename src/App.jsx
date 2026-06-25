@@ -1,12 +1,14 @@
-import './App.css'
-import FilmDisplay from "./components/FilmDisplay"
+import "./App.css";
+/* import FilmDisplay from './components/FilmDisplay' */
+import PosterDisplay from "./components/PosterDisplay";
 
 function App() {
   return (
     <>
-    <FilmDisplay />
+      {/* <FilmDisplay /> */}
+      <PosterDisplay />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
