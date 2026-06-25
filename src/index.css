@@ -1,14 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
 
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-
-  /* --text: #6b6375;
-  --text-h: light-dark(#08060d, white);
-  --bg: light-dark(#fff, #2f2f2f); */
-
   --sans: "Google Sans", system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
@@ -19,12 +11,29 @@
   letter-spacing: 0.18px;
 
   
+  --theme: light;
+
+  --text: if(
+    style(--theme: light): #6b6375;
+    else: blue;
+  );
+
+  --text-h: if(
+    style(--theme: light): #08060d;
+    else: white;
+  );
+
+  --bg: if(
+    style(--theme: light): white;
+    else: #2f2f2f;
+  );
 }
+
+
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text-h: white;
-    --bg: #2f2f2f;
+    --theme: dark;
   }
 }
 

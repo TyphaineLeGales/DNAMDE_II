@@ -32,10 +32,38 @@
   justify-content: space-evenly;
   /* height: max-content; */
 
-  .movie-title {
-    font-weight: bold;
-    font-size: larger;
+
+  .top-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    .movie-title {
+      font-weight: bold;
+      font-size: larger;
+    }
+
+    .movie-like {
+      display: flex;
+      width: 1.5rem;
+      aspect-ratio: 1;
+      padding: 0;
+      border: 0;
+      background-color: transparent;
+      transition: rotate 0.5s;
+      color: var(--text-h);
+      rotate: 0;
+      
+      &[data-liked="true"] {
+        color: rgb(195, 85, 85);
+        rotate: 1turn;
+      }
+    }
+
   }
+
+  
 
   .movie-infos {
     display: flex;

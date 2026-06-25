@@ -12,6 +12,8 @@
   height: 2rem;
   border-radius: 20px;
   padding: 0 1rem;
+  border: 0;
+  box-shadow: 0 0 20px -10px contrast-color(var(--bg))
 }
 
 #light-dark-button {
@@ -22,11 +24,5 @@
   padding: 0.5rem 1rem;
   border: 1px solid var(--text-h);
   border-radius: 20px;
-  
-  /* background-image: url('https://api.iconify.design/streamline-ultimate:light-mode-bright-dark-bold.svg');
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat; */
-
-  /* width: 2rem; */
+  background-color: white;
 }
