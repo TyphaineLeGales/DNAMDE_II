@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Film from "./Film";
+import film from "../../public/filmData.json"
 
 export default function FilmList() {
   const [films, setFilms] = useState([]);
@@ -61,7 +62,7 @@ export default function FilmList() {
       </div>
 
       {filteredFilms.length === 0 ? (
-        <p className="no-result">No movies found</p>
+        <p className="no-result">Aucun résultat 💩</p>
       ) : (
         <div className="film-grid">
           {filteredFilms.map((film) => (
@@ -70,6 +71,8 @@ export default function FilmList() {
               title={film.Title}
               year={film.Year}
               image={film.Poster || film.Images?.[0]}
+              rating={film.imdbRating}
+              plot={film.Plot}
             />
           ))}
         </div>
