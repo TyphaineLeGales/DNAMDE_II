@@ -4,7 +4,7 @@ function FilmList(props) {
 
     return (
         <div className='film-grid'>
-            {props.film.map(film => <Film data={film} />)}
+            {props.film.map((film) => <Film key={film.imdbID} data={film} />)}
         </div>
     )
 }

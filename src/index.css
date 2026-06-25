@@ -68,17 +68,25 @@ h2{
 
 .genre-text{
   margin: 5px 15px;
-  list-style: none;
+  text-wrap: nowrap;
 }
 
 .genre-container{
   background-color: rgb(218, 220, 225);
   border-radius: 15px;
   padding: 5px;
+  border: none;
+}
+
+.active{
+  background-color: rgb(40, 40, 40);
+  color: white;
 }
 
 .genre-list{
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 15px;
-  overflow-x: scroll;
+  margin-bottom: 10px;
 }

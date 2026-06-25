@@ -11,15 +11,33 @@ function App() {
   //recherche
   const [userInput, setUserInput] = useState("")
   // const filteredFilms = jsonData.includes(userInput, setUserInput)
-  const filteredFilms = jsonData.filter((movie) => movie.Title.toLowerCase().includes(userInput.toLowerCase()))
+  const [selectedGenre, setSelectedGenre] = useState("All")
+  console.log(selectedGenre)
+    const isInSearch = (movie) => {
+    return movie.Title.toLowerCase().includes(userInput.toLowerCase())
+  }
 
-  const genres = jsonData.map(film => film.Genre.split(";"));
+  const isInGenreFilter = (movie) => {
+    if(selectedGenre !== "All" ) {
+      return movie.Genre.includes(selectedGenre)
+    } else {
+      return true
+    }
+    
+  }
+  const filteredFilms = jsonData.filter(
+    (movie) => isInSearch(movie) && isInGenreFilter(movie)
+  ) 
+
+
+
+ 
+  const genres = jsonData.map(film => film.Genre.split(", "));
   const genresSet = [...new Set(['All', ...genres.flat()])];
-  console.log(jsonData.map(film => film.Genre.split(";")))
 
-  useEffect(() => {
-    filteredFilms
-  }, [userInput])
+  // useEffect(() => {
+  //   filteredFilms
+  // }, [userInput])
 
   return (
     <div className='films-container'>
@@ -29,7 +47,7 @@ function App() {
           <input className='search-input' value={userInput} onChange={e => setUserInput(e.target.value)}/>
         </label>
       </div>
-      <GenreList genre={genresSet}/>
+      <GenreList genre={genresSet} setSelectedGenre={setSelectedGenre} selectedGenre={selectedGenre}/>
       <FilmList film={filteredFilms}/>
     </div>
   )
