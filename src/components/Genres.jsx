@@ -3,13 +3,14 @@ return (
   <div className="genres">
     {genres.map((genres) => (
     <span
-    key={genres} className="tags">
+    key={genres} className="tags"
     onClick={() => 
     setselectedGenre(
     genres === selectedGenre ? "" : genres
     )
     }
     className={genres === selectedGenre ? "tags active" : "tags"}
+    >
     {genres}
     </span> 
     ))}
