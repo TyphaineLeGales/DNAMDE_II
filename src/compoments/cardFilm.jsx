@@ -20,17 +20,25 @@ import "./cardFilm.css";
 function CardFilm({ film }) {
     return (
         <div className="film-card">
-            <img 
-            src={film.movie_banner.startsWith("https") ? film.movie_banner : film.image}
-            />
-        <h2>{film.title}</h2>
-        <div className="film-note">
-            <p>{film.release_date}</p>
-            <p>⭐{film.rt_score}</p>
-        </div>
-        <p className="film-genre">{film.producer}</p>
-        <p className="film-resume">{film.description.slice(0, 150)}...</p>
+            <div className="film-image-container">
+                <img
+                    src={film.movie_banner}
+                    alt={film.title}
+                    onError={(e) => e.target.src = film.image}
+                />
+                <button className="like-btn">♡</button>
+            </div>
+            <div className="film-info">
+                <h2>{film.title}</h2>
+                <div className="film-meta">
+                    <span>{film.release_date}</span>
+                    <span>⭐ {film.rt_score}</span>
+                </div>
+                <p className="film-genre">{film.producer}</p>
+                <p className="film-plot">{film.description.slice(0, 150)}...</p>
+            </div>
         </div>
     );
 }
+
 export default CardFilm;
