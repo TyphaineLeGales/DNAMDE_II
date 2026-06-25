@@ -14,13 +14,12 @@
 } */
 
 .film{
-  border: 1px solid #08060d;
   border-radius: 15px;
   display: grid;
   grid-template-rows: 1fr max-content;
   margin-bottom: 30px;
   justify-self: center;
-
+  box-shadow: 0px 0px 10px 0px #08060d;
 }
 
 .imagecontainer{
@@ -101,6 +100,7 @@ h3{
   position: relative;
   max-width: 1400px;
   padding: 40px 30px;
+  border: 1px solid #08060d;
 }
 
 .mode-switch {
@@ -110,14 +110,20 @@ h3{
   font-size: 11px;
   cursor: pointer;
   transition: color 0.2s ease-in-out;
+  border: 1px solid #08060d;
+  padding: 10px;
+  border-radius: 30px;
+
 
   &:hover {
     color: #50bbf1;
+    background-color: #000000;
   }
 }
 
 
 .dark {
-  background-color: #08060d;
-  color: rgb(255, 255, 255);
+  background-color: #2b2b2b;
+  color: #ffffff;
+  
 }
