@@ -1,5 +1,6 @@
 import ListFilm from "./compoments/listFilm.jsx";
 import { useState } from "react";
+import SqueletteCard from "./compoments/squeletteCard.jsx";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -10,13 +11,14 @@ function App() {
   };
 
   return (
-    <div>
-      <button onClick={toggleDark} className="mode">
-        {darkMode ? "☀️ Mode clair" : "🌙 Mode nuit"}
-      </button>
-      <h1>Hello Louane 🌞</h1>
-      <ListFilm/>   
-    </div>
+    // <div>
+    //   <button onClick={toggleDark} className="mode">
+    //     {darkMode ? "☀️ Mode clair" : "🌙 Mode nuit"}
+    //   </button>
+    //   <h1>Hello Louane 🌞</h1>
+    //   <ListFilm/>   
+    // </div>
+    <div><SqueletteCard/></div>
   )
 }
 
