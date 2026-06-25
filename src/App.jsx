@@ -11,14 +11,14 @@ function App() {
   };
 
   return (
-    // <div>
-    //   <button onClick={toggleDark} className="mode">
-    //     {darkMode ? "☀️ Mode clair" : "🌙 Mode nuit"}
-    //   </button>
-    //   <h1>Hello Louane 🌞</h1>
-    //   <ListFilm/>   
-    // </div>
-    <div><SqueletteCard/></div>
+    <div>
+      <button onClick={toggleDark} className="mode">
+        {darkMode ? "☀️ Mode clair" : "🌙 Mode nuit"}
+      </button>
+      <h1>Hello Louane 🌞</h1>
+      <ListFilm/>   
+    </div>
+    // <div><SqueletteCard/></div>
   )
 }
 
