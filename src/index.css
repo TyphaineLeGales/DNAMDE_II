@@ -24,7 +24,14 @@
   letter-spacing: 0.18px;
 }
 
-
+.button-fav{
+    position: absolute; 
+    top : 20px;
+    left : 20px;
+    
+    
+    
+}
 
 body {
   margin: 0;
@@ -41,6 +48,7 @@ body {
 }
 
 .film-card {
+  position: relative;
   border : 1px solid var(--bg);
   border-radius: 8px;
   overflow: hidden;
