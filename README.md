@@ -98,6 +98,16 @@ Au début mon state movies est vide. Si j'ai peu de réseau par exemple, ma page
 
 *Concepts mobilisés : fetch, useState, useEffect, hooks, suspense*  
 
-# VI. ANALYZING PERFORMANCE - DEBUGGING
+# VI. ADD FAVORITES
+1. rajouter un bouton favorites sur vos Cards
+
+2. rajouter un header qui vous permet de switcher entre la page search et la page Favoris qui liste les films que vous avez marqué en Favoris (réutiliser votre composant filmList a l'intérieur de votre composant Favorites)
+![Search](./public/page-search.png)
+![Favoris](./public/page-favoris.png)
+
+3. Stocker les favoris dans le local storage pour les retrouver meme après avoir rouvert la page en utilisant localStorage.setItem
+
+
+
 # VII. INTERMEDIATE REACT PATTERNS : HOOKS & REDUCERS
 # VIII. EXTERNAL STATE LIBRAIRIES - ZUSTAND & REDUX
