@@ -3,6 +3,16 @@ body{
   font-family: "Roboto", sans-serif;
 }
 
+.app-light{
+  --bg: white;
+  --text: black;
+}
+
+.app-dark{
+  --bg: rgb(40, 40, 40);
+  --text: white;
+}
+
 h2{
   font-size: 21px;
   font-weight: bold;
