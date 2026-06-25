@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div className={darkMode ? "app dark" : "app light"}>
-      <button 
+      <button
         className="theme-btn"
         onClick={() => setDarkMode(!darkMode)}
       >

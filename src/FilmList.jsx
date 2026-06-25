@@ -6,7 +6,7 @@ function FilmList() {
   const [search, setSearch] = useState("");
   const [selectedGenre, setSelectedGenre] = useState("All");
 
-  // Récupère tous les genres sans doublon
+  // Récupère tous les genres sa
   const genres = [
     "All",
     ...new Set(

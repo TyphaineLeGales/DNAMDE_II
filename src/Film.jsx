@@ -7,8 +7,15 @@ function Film({ title, year, poster, genre, rating }) {
         <h2>{title}</h2>
 
         <div className="film-info">
-          <p>{year}</p>
-          <p>⭐ {rating}</p>
+          <div className="info-box">
+            <span className="info-label">ANNEE</span>
+            <span className="info-value">{year}</span>
+          </div>
+
+          <div className="info-box">
+            <span className="info-label">NOTE</span>
+            <span className="info-value">⭐ {rating}</span>
+          </div>
         </div>
 
         <p className="genre">{genre}</p>
