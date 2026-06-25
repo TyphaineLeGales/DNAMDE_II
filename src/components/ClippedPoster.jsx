@@ -6,11 +6,10 @@ function ClippedPoster(props){
   const [isActive, setIsActive] = useState(false);
 
     const handleClick = (event) => {
+    setIsActive(isActive => !isActive);
     console.log(event.target);
-    setIsActive(isActive => !isActive)
 
   };
-
 
  return(
     <>
