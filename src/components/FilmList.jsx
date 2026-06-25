@@ -2,13 +2,15 @@ import { useEffect, useState } from "react";
 import Film from "./Film";
 import Loading from "./Loading";
 
-export default function FilmList() {
+export default function FilmList({
+  favorites,
+  toggleFavorite,
+}) {
   const [films, setFilms] = useState([]);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    /*fetch("/filmData.json")*/
     fetch("https://ghibliapi.vercel.app/films")
       .then((res) => res.json())
       .then((data) => {
@@ -18,7 +20,9 @@ export default function FilmList() {
   }, []);
 
   const filteredFilms = films.filter((film) =>
-    film.title.toLowerCase().includes(search.toLowerCase())
+    film.title
+      .toLowerCase()
+      .includes(search.toLowerCase())
   );
 
   if (loading) {
@@ -32,22 +36,29 @@ export default function FilmList() {
           type="text"
           placeholder="Rechercher un film..."
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) =>
+            setSearch(e.target.value)
+          }
         />
       </div>
 
       {filteredFilms.length === 0 ? (
-        <p className="no-result">No movies found</p>
+        <p className="no-result">
+          No movies found
+        </p>
       ) : (
         <div className="film-grid">
           {filteredFilms.map((film) => (
             <Film
               key={film.id}
+              film={film}
               title={film.title}
               year={film.release_date}
               image={film.image}
               rating={film.rt_score}
               plot={film.description}
+              favorites={favorites}
+              toggleFavorite={toggleFavorite}
             />
           ))}
         </div>
