@@ -29,6 +29,8 @@ git push --set-upstream origin typhaine-legales
 quand vous retournez ici https://github.com/TyphaineLeGales/DNAMDE_II, votre branche avec votre nom devrait s'afficher ici 
 ![Setup branch](./public/setup-branch.png)
 
+---
+
 # II. AFFICHER UNE LISTE DES FILMS STATIC
 
 Utiliser la donnée contenue dans /public/filmData.json pour afficher chaque film (avec son titre, sa date de parution et son image dans une grille) comme ici 
@@ -39,6 +41,8 @@ Utiliser un composant réutilisable Film a qui l'on passe des props depuis le co
 Attention : La grille doit être responsive et s'adapter au mobile
 
 *Concepts mobilisés : importer un json, créer un composant, mapper de la donnée en liste et render un composant enfant en passant des props, css responsive*  
+
+---
 
 # III. FILTRER LA LISTE
 1. Créer un input pour filtrer les films qui s'affichent selon leur titre
@@ -69,6 +73,8 @@ La 1ère solution c'est l'api de Contexte développée par React https://react.d
 
 *Concepts mobilisés : Context provider and consumer*  
 
+---
+
 # V. REQUETER DE LA DONNEE VIA UNE API
 
 Bon c'est super on peux faire des recherches dans notre fichier filmData.json mais dans la vrai vie de dev, on n'a pas souvent de la donnée dans des fichiers en local. Le schema le plus comment c'est de de voir faire des calls sur une API, c'est à dire requeter de la donnée sur un serveur tierce puis attendre qu'elle nous revienne avant d'affficher notre interface. 
@@ -98,6 +104,8 @@ Au début mon state movies est vide. Si j'ai peu de réseau par exemple, ma page
 
 *Concepts mobilisés : fetch, useState, useEffect*  
 
+---
+
 # VI. FAVORIS ❤️
 1. rajouter un bouton favorites sur vos Cards
 
@@ -113,10 +121,15 @@ https://developer.mozilla.org/fr/docs/Web/API/Window/localStorage
 
 4. Utiliser useRef et useEffect pour que quand vous arrivez sur la page search, l'input s'auto-focus (pas besoin de cliquer dessus, vous arrivez sur search vous devez pouvoir taper votre recherche direct)
 Petite aide searchInputRef.current.focus(); doit s'appeler chaque fois que votre composant s'affiche sur la page.
-
-5. 
+https://react.dev/learn/manipulating-the-dom-with-refs
 
 *Concepts mobilisés : localStorage, useRefs*  
 
-# VII. INTERMEDIATE REACT PATTERNS : HOOKS & REDUCERS
-# VIII. EXTERNAL STATE LIBRAIRIES - ZUSTAND & REDUX
+---
+
+# VII. REACT ROUTER 
+
+---
+
+pour après : custom hooks, reducers, state management librairies (zustand || Redux)
+
