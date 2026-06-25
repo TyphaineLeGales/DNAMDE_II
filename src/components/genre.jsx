@@ -1,9 +1,9 @@
 function Genre(props){
 
     return(
-        <div className="genre-container">
-            <p className="genre-text">{props.data}</p>
-        </div>
+        <ul className="genre-container">
+            <li className="genre-text" key={Genre.id}>{props.data}</li>
+        </ul>
     )
 }
 

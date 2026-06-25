@@ -15,6 +15,7 @@ function App() {
 
   const genres = jsonData.map(film => film.Genre.split(";"));
   const genresSet = [...new Set(['All', ...genres.flat()])];
+  console.log(jsonData.map(film => film.Genre.split(";")))
 
   useEffect(() => {
     filteredFilms

@@ -61,3 +61,24 @@ h2{
   border-radius: 8px;
   height: 20px;
 }
+
+.genres{
+  overflow: hidden;
+}
+
+.genre-text{
+  margin: 5px 15px;
+  list-style: none;
+}
+
+.genre-container{
+  background-color: rgb(218, 220, 225);
+  border-radius: 15px;
+  padding: 5px;
+}
+
+.genre-list{
+  display: flex;
+  gap: 15px;
+  overflow-x: scroll;
+}
