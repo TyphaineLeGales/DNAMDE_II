@@ -1,7 +1,7 @@
 function Film ({title, producer, rt_score, running_time, description, image, isFavorite, onToggleFavorite}){
     return (
         <div className="film-card">
-            <button className="button-fav" onClick={}> 
+            <button className="button-fav" onClick={() => onToggleFavorite(title)}> 
                 {isFavorite ? "❤️" : "🤍" }
             </button>
             <div>

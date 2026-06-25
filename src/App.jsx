@@ -8,6 +8,12 @@ function App() {
     document.body.className = theme
   }, [theme])
 
+  // appel de la fonction onToogleFavorite
+
+  onToggleFavorite(title){
+    isFavorite()
+  }
+
   return (
     <div className={theme === "dark" ? "dark" : "light"}>
       <div className="wrapp-theme">
