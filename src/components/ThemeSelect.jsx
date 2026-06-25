@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function ThemeSelect(props) {
+function ThemeSelect() {
   const [active, setActive] = useState(true);
   const themeActive = ["Light", "Dark"];
 

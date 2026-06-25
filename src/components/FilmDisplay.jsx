@@ -1,9 +1,8 @@
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import FilmCard from "./FilmCard";
 import InputBar from "./InputBar";
 import TagList from "./TagList";
 import { useEffect, useState } from "react";
-import data from "../assets/filmData.json";
 import Loading from "./Loading";
 
 function FilmDisplay() {
@@ -48,8 +47,8 @@ function FilmDisplay() {
   return (
     <>
       <InputBar valueChange={handleChange}></InputBar>
-      <TagList onSelect={handleTagSelect} />
       <Suspense fallback={<Loading />}>
+        <TagList onSelect={handleTagSelect} />
         <div className="film-display">
           {dataLoad && ghibliFilms.length === 0 ? (
             <p>nothing found</p>

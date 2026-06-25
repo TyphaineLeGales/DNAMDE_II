@@ -3,7 +3,7 @@ import { useState } from "react";
 function Tag({tag, onSelect}) {
   const [active, isActive] = useState(false);
 
-  const handleClick = (event) => {
+  const handleClick = () => {
 
       const newActive = !active;
       isActive(newActive);
