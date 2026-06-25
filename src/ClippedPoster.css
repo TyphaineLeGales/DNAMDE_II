@@ -1,3 +1,18 @@
+
+
+.input-bar {
+  width: 30rem;
+  height: 45px;
+  margin-right: 1em;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.23);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.1px);
+  -webkit-backdrop-filter: blur(5.1px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
 section {
   width: 80%;
   height: 100vh;
@@ -6,8 +21,8 @@ section {
   margin-left: auto;
   margin-right: auto;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
-  gap: 8%;
+  grid-template-rows: repeat(auto, 22rem);
+  gap: 5%;
 }
 
 .poster-container {
@@ -51,7 +66,7 @@ img {
 .heart-btn {
   width: 50px;
   height: 50px;
-  display:flex;
+  display: flex;
   justify-content: center;
   background: transparent;
   border: none;
@@ -61,8 +76,8 @@ img {
   transition: transform 0.2s ease-in;
 }
 
-.heart-btn:hover{
-    transform: scale(1.05);
+.heart-btn:hover {
+  transform: scale(1.05);
 }
 
 @media (max-width: 1000px) {
@@ -73,12 +88,12 @@ img {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    flex-direction:row;
+    flex-direction: row;
     margin-top: 5%;
   }
 
   .poster-container {
-    width:25rem;
+    width: 25rem;
     height: auto;
     border-radius: 15%;
   }

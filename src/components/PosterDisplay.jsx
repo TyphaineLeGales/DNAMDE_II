@@ -32,11 +32,11 @@ function PosterDisplay(props) {
 
   return (
     <>
-      <section>
-        {props.condition ? (
-          <>
-            <InputBar valueChange={handleChange}></InputBar>
-            {ghibliFilms.slice(0, 10).map((film, index) => (
+      {props.condition ? (
+        <>
+          <InputBar valueChange={handleChange}></InputBar>
+          <section>
+            {ghibliFilms.slice(0, 8).map((film, index) => (
               <ClippedPoster
                 key={film.title}
                 image={film.image}
@@ -46,11 +46,11 @@ function PosterDisplay(props) {
                 fillColor={properties[index % properties.length].fillColor}
               />
             ))}
-          </>
-        ) : (
-          "hello"
-        )}
-      </section>
+          </section>
+        </>
+      ) : (
+        "hello"
+      )}
     </>
   );
 }
