@@ -3,10 +3,22 @@ import Filter from './components/Filter';
 import filmData from './assets/filmData.json';
 import {useState} from "react";
 import Genres from './components/Genres';
+import { useEffect } from 'react';
+
+
 
 function App() {
   const [filter, setFilter] = useState("");
   const [selectedGenre, setSelectedGenre] = useState("");
+  const [mode, setMode] = useState('light'); 
+
+  useEffect(() => {
+    if (mode === 'dark') {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+    }, [mode]);
 
   const filteredFilms = filmData.filter((film) => {
   const genres = film.Genre.split(", ");
@@ -44,7 +56,13 @@ function App() {
     <FilmList films={filteredFilms} />
   )}
 
-  
+  <div className = 'container'/>
+  <span className='mode-switch'
+  onClick={() =>
+  setMode(mode === 'dark' ? 'light' : 'dark')
+  }>
+  {mode === 'dark' ? 'Light mode' : 'Dark mode'}
+</span>
     </div>
   );
 }

@@ -90,3 +90,34 @@ h3{
   color: white;
   cursor: pointer;
 }
+
+
+.active  {
+  background-color: #08060d;
+  color: #fff;
+}
+
+.container {
+  position: relative;
+  max-width: 1400px;
+  padding: 40px 30px;
+}
+
+.mode-switch {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: #50bbf1;
+  }
+}
+
+
+.dark {
+  background-color: #08060d;
+  color: rgb(255, 255, 255);
+}
