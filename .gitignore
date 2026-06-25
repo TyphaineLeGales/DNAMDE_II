@@ -12,7 +12,6 @@ dist
 dist-ssr
 *.local
 
-/src/components
 
 # Editor directories and files
 .vscode/*
