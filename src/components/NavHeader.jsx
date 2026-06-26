@@ -5,7 +5,7 @@ export default function NavHeader() {
   return (
     <nav id="navigation">
       <NavLink to="/">Explore</NavLink>
-      <NavLink to="/favourite">Favourite</NavLink>
+      <NavLink to="/favourites">Favourites</NavLink>
     </nav>
   )
 }

@@ -1,7 +1,9 @@
 import { useState } from 'react'
-import LikeButton from './Like'
+import LikeButton from './LikeButton';
+import InfoButton from './InfoButton'
 import './Card.css'
 import { getStorage, setStorage, safeInitialisation } from '../utils/storage'
+
 
 export default function Card(props) {
   const cardID = props.data.id;
@@ -18,17 +20,12 @@ export default function Card(props) {
 
   return (
     <div className="card">
-      {/* <picture className="movie-poster">
-        <source srcset={props.data.Images[0]} alt="Poster"/>
-        <source srcset="placeholder.webp" alt="Poster"/>
-        <img src="placeholder.webp" alt="" />
-        
-      </picture> */}
+      <LikeButton isLiked={isLiked} setIsLiked={setLike}/>
       <img className="movie-poster" src={props.data.image ?? "placeholder.webp"} alt="Poster"/>
       <div className="movie-data">
         <div className='top-actions'>
           <p className="movie-title">{props.data.title}</p>
-          <LikeButton isLiked={isLiked} setIsLiked={setLike}/>
+          <InfoButton id={cardID}/>
         </div>
         <div className="movie-infos">
           <span>{props.data.release_date}</span>
