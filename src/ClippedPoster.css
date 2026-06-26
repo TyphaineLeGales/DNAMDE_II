@@ -128,8 +128,8 @@ img {
   background: transparent;
   border: none;
   position: relative;
-  left: 80%;
-  top: -5%;
+  left: 75%;
+  top: -10%;
   transition: transform 0.2s ease-in;
 }
 
