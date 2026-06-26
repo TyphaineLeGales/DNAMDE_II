@@ -125,6 +125,24 @@ border-radius: 4px;
   box-sizing: border-box;
 }
 
+.wrapp-pages{
+    display: flex;
+    gap : 50px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+}
+
+.button-page-search{
+    background-color: var(--bgb-) ;
+    border: none;
+    font-size: 20px
+}
+
+
+
+
 h1,
 h2 {
   font-family: var(--heading);

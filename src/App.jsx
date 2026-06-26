@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 function App() {
   const [theme, setTheme] = useState("light")
   const [favorites, setFavorites] = useState([])
+  const [page, setPage] = useState("search")
   // pour que cela s'applique partout.
   useEffect(() => {
     document.body.className = theme
@@ -26,10 +27,18 @@ function App() {
           {theme}
         </button>
       </div>
-      <FilmList 
+      <div className="wrapp-pages">
+        <button className="button-page-search" onClick={() => setPage("search")}>
+          SEARCH
+        </button>
+        <button className="button-page-search" onClick={() => setPage("favoris")}>
+          FAVORIS
+        </button>
+      </div>
+      {page === "search" ?<FilmList 
       favorites= {favorites}
               onToggleFavorite = {onToggleFavorite}
-      />
+      /> : <favorites />}
     </div>
   )
 }
