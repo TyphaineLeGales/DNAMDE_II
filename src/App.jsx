@@ -16,8 +16,6 @@ function App() {
   const [activeGenre, setActiveGenre] = useState("All");
   const [colorMode, setColorMode] = useState("light");
 
-  //const [films, setFilms] = useState([]);
-
   useEffect(() => {
     // exécuter la fonction une seule fois
     const fetchFilmsData = async () => {

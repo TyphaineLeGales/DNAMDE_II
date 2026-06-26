@@ -44,9 +44,17 @@ width: 100%;
 
 
 .card{
+    position: relative;
     border-radius: 40px;
     padding: 20px;
     flex: 1;
+}
+
+.favorite-icon{
+    height: 50px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
 }
 
 .card:hover{
