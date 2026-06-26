@@ -1,5 +1,6 @@
 import FilmList from "./component/filmList.jsx"
 import { useState, useEffect } from "react"
+import Favorites from "./component/favoris.jsx"
 function App() {
   const [theme, setTheme] = useState("light")
   const [favorites, setFavorites] = useState([])
@@ -38,7 +39,7 @@ function App() {
       {page === "search" ?<FilmList 
       favorites= {favorites}
               onToggleFavorite = {onToggleFavorite}
-      /> : <favorites />}
+      /> : <Favorites />}
     </div>
   )
 }
