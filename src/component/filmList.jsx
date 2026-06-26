@@ -1,6 +1,6 @@
 //import filmData from "../assets/filmData.json"
 import Film from "./film.jsx"
-import { useState, useEffect } from "react" // import pour se souvenir
+import { useState, useEffect, useRef } from "react" // import pour se souvenir
 
 
 
@@ -13,7 +13,9 @@ function FilmList ({favorites, onToggleFavorite, filmData}){
     //ci dessus cela créer un tableau sans doublon des genre
     const [selectedProducer, setSelectedProducer] = useState("All")
     //fonction pour selectionner le statue des genres
-
+    const searchInputRef = useRef(null)
+    useEffect(()=> {
+    searchInputRef.current.focus()}, [])
 
 // je sais qu'il faut utiliser suspense mais je n'y arrive vraiment pas. 
 
@@ -25,6 +27,7 @@ function FilmList ({favorites, onToggleFavorite, filmData}){
         <div className="wrap-search">
             <h2>Search a movie</h2>
             <input
+            ref={searchInputRef}
             type="text"
             value={search}
             onChange={(e)=> setSearch(e.target.value)}/>
