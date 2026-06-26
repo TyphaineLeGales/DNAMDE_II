@@ -8,16 +8,10 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
 
 useEffect(() => {
-  setFilms([
-    {
-      id: "1",
-      title: "Mon voisin Totoro",
-      image: "https://image.tmdb.org/t/p/w500/rtGDOeG9LzoerkDGZF9dnVeLppL.jpg",
-      release_date: "1988",
-      description: "Film de Studio Ghibli",
-      rt_score: "93"
-    }
-  ]);
+  fetch("https://ghibliapi.herokuapp.com/films")
+    .then((response) => response.json())
+    .then((data) => setFilms(data))
+    .catch((error) => console.error(error));
 }, []);
 
   const filteredMovies = films.filter((movie) =>
