@@ -4,23 +4,16 @@ import { useState, createContext } from "react";
 import FavoriteContext from "./FavoriteContext";
 
 function App() {
-    const [favorite, setFavorite] = useState([]);
+    const [favorites, setFavorites] = useState([]);
   
-    const FavoritesContext = createContext(favorite);
-
-    const addToFavorites = () => {
-        setFavorite((isFavorite) => !isFavorite); //comme un toggle, change le favorite state
-        console.log("favorite : ", favorite)
-        
-      };
+    const FavoritesContext = createContext(favorites);
   
     return (
-    <FavoriteContext  value={{ favorite, setFavorite }}>
-         <div> <Search addToFavorites={addToFavorites}/></div>
-         <div> <Favorites favorite={favorite}/></div>
+    <FavoriteContext  value={{ favorites, setFavorites }}>
+         <div> <Search/></div>
+         <div> <Favorites favorites={favorites}/></div>
     </FavoriteContext>
     )
-
     
     }
 

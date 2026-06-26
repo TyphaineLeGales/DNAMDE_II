@@ -1,8 +1,21 @@
 import "./card.css";
 import HeartButton from "./HeartButton"
+import FavoriteContext from "./FavoriteContext";
+import { useContext } from "react";
 
 function Card(props) {
- // console.log(props);
+    const {setFavorites, favorites} = useContext(FavoriteContext)
+  
+   const onBtnClick = () => {
+    console.log("clicked")
+    
+     setFavorites(prev => [...prev, props.data.title])
+     console.log(favorites)
+
+   }
+
+
+
 
   return (
     <div className="card">
@@ -17,6 +30,7 @@ function Card(props) {
       </div>
       <p className="movie-genres">{props.data.Genre}</p>
       <p className="movie-synopsis"> {props.data.description}</p>
+        <button onClick={onBtnClick}>click</button>
     </div>
   );
 }
