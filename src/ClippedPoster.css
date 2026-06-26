@@ -71,14 +71,15 @@
 
 section {
   width: 80%;
-  height: 100vh;
+  height: 100%;
   display: grid;
   margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(auto, 22rem);
+  grid-template-rows: auto;
   gap: 5%;
+
 }
 
 .poster-container {

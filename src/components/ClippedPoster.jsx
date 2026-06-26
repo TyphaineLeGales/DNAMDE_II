@@ -1,16 +1,15 @@
 import Heart from "./icons/Heart"
-import { useState } from "react";
+
 
 function ClippedPoster(props){
 
-  const [isActive, setIsActive] = useState(false);
+  //  const [isActive, setIsActive] = useState(false);
 
     const handleClick = (event) => {
-    setIsActive(isActive => !isActive);
-    localStorage.setItem(props.posterInfo, props.keyItem);
-    console.log(localStorage);
-
-
+    event.preventDefault();
+    // setIsActive(isActive => !isActive);
+    // if(!isActive) localStorage.setItem("favorite", props.favorite);
+    // else localStorage.removeItem("favorite", props.favorite);
   };
 
  return(
@@ -35,7 +34,7 @@ function ClippedPoster(props){
         </div>
        
     </figure>
-     <Heart active={isActive} handleClick={handleClick}/>
+     <Heart active={props.isActive} handleClick={handleClick, props.setFav}/>
      </div>
  </>
  )
