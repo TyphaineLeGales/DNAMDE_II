@@ -147,5 +147,17 @@ ressource pour comprendre react router 👉 https://fireship.dev/react-router-tu
 Ajouter une route pour pouvoir afficher tous les détails d'un film en se servant de son id
 ---
 
-pour après : custom hooks, reducers, state management librairies (zustand || Redux)
+# VIII. GESTION DES FAVORIS AVEC ZUSTAND
 
+depuis la racine de votre repo 
+
+```
+npm install zustand
+```
+
+Créer un dossier src/stores et dans stores un fichier favorites.js
+voila la doc pour comprendre comment transformer un state react classique en un state gérer par zustand et accessible n'importe où dans l'application 👉 https://zustand.docs.pmnd.rs/learn/getting-started/introduction
+
+
+---
+pour après : custom hooks, reducers
