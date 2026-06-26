@@ -7,12 +7,12 @@ function FilmList({ films }) {
       {films.map((film, index) => (
     <Film
       key={index}
-      Title={film.Title}
-      Year={film.Year}
-      Genre={film.Genre}
-      Images={film.Images}
-      imdbRating={film.imdbRating}
-      Plot={film.Plot}
+      title={film.title}
+      release_date={film.release_date}
+      director={film.director}
+      image={film.image}
+      rt_score={film.rt_score}
+      description={film.description}
       />
       ))}
     </div>

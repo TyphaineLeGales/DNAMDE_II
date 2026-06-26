@@ -1,16 +1,16 @@
 import FilmList from './components/FilmList';
 import Filter from './components/Filter';
-import filmData from './assets/filmData.json';
 import {useState} from "react";
 import Genres from './components/Genres';
 import { useEffect } from 'react';
 
 
-
 function App() {
   const [filter, setFilter] = useState("");
   const [selectedGenre, setSelectedGenre] = useState("");
-  const [mode, setMode] = useState('light'); 
+  const [mode, setMode] = useState('light');
+  const [films, setFilms] = useState([]);
+ 
 
   useEffect(() => {
     if (mode === 'dark') {
@@ -20,22 +20,42 @@ function App() {
     }
     }, [mode]);
 
-  const filteredFilms = filmData.filter((film) => {
-  const genres = film.Genre.split(", ");
-
-  const matchTitle = film.Title.toLowerCase().includes(filter.toLowerCase());
-  // console.log(filter);
   
-  const matchGenre = 
-  selectedGenre === ""  || genres.includes(selectedGenre);
-  
+  const API_URL = `https://ghibliapi.vercel.app/films/`;
 
-  return matchTitle && matchGenre;
+  useEffect(() => {
+    const loadData = async () => {
+      const response = await fetch(API_URL);
+      const data = await response.json();
+      setFilms(data);
+    };
+
+    loadData();
+  }, [API_URL]);
+
+
+ 
+      
+
+
+
+  const filteredFilms = films.filter((film) => {
+    console.log(film)
+  // const genres = film.Genre.split(", ");
+
+    const matchtitle = film.title.toLowerCase().includes(filter.toLowerCase());
+    // console.log(filter);
+    
+    const matchGenre = 
+    selectedGenre === ""  || genres.includes(selectedGenre);
+    
+
+    return matchtitle && matchGenre;
   });
 
   const genres = [
     ...new Set(
-      filmData.flatMap((film) => film.Genre.split(", "))
+      films.flatMap((film) => film.director.split(", "))
     )
   ];
 

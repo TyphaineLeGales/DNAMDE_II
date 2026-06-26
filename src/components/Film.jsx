@@ -1,14 +1,14 @@
-function Film({ Title, Year, Images, Genre,imdbRating, Plot}) {
+function Film({ title, release_date, image, Genre,rt_score, description}) {
   return (
     <div className="film">
       <div className="imagecontainer">
-      <img className="images" src={Images} alt={Images} />
+      <img className="images" src={image} alt={image} />
       </div>
-      <h2>{Title}</h2>
-      <p>{Year}</p>
-      <p>{imdbRating}</p>
+      <h2>{title}</h2>
+      <p>{release_date}</p>
+      <p>{rt_score}</p>
       <h3>{Genre}</h3>
-      <p>{Plot}</p>
+      <p>{description}</p>
     </div>
   );
 }
