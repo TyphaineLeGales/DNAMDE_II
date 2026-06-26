@@ -3,9 +3,14 @@ import { useState, useEffect } from "react"
 import Favorites from "./component/favoris.jsx"
 function App() {
   const [theme, setTheme] = useState("light")
-  const [favorites, setFavorites] = useState([])
+  //const [favorites, setFavorites] = useState([])
   const [page, setPage] = useState("search")
   const [filmData, setFilmData] = useState([])
+
+  const [favorites, setFavorites] = useState(() => {
+  const saved = localStorage.getItem("favorites")
+  return saved ? JSON.parse(saved) : []
+})
   // pour que cela s'applique partout.
   useEffect(() => {
     document.body.className = theme
@@ -31,6 +36,9 @@ function App() {
         setFilmData(data)
     })}, [])
 
+    useEffect (() => {
+      localStorage.setItem("favorites", JSON.stringify(favorites))
+    }, [favorites])
 
 
   return (
