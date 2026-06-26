@@ -1,17 +1,17 @@
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import "./App.css";
 /* import FilmDisplay from './components/FilmDisplay' */
 /* import PosterDisplay from "./components/PosterDisplay"; */
 import PosterPage from "./components/PosterPage";
 
 function App() {
-
-
   return (
     <>
-
-      {/* <FilmDisplay /> */}
-      {/* <PosterDisplay /> */}
-      <PosterPage />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<PosterPage />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

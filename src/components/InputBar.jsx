@@ -6,7 +6,6 @@ function InputBar(props) {
 
   useEffect(() => {
     inputRef.current.focus();
-    console.log(inputRef.current);
   }, []);
 
   return (
