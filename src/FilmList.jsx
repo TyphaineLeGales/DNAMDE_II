@@ -1,45 +1,46 @@
-import { useState } from "react";
-import filmData from "./assets/filmData.json";
+import { useEffect, useState } from "react";
 import Film from "./Film";
 
 function FilmList() {
+  const [filmData, setFilmData] = useState([]);
   const [search, setSearch] = useState("");
-  const [selectedGenre, setSelectedGenre] = useState("All");
+  const [selectedDirector, setSelectedDirector] = useState("All");
   const [favorites, setFavorites] = useState([]);
 
-  const genres = [
+  useEffect(() => {
+    fetch("https://ghibliapi.vercel.app/films")
+      .then((response) => response.json())
+      .then((data) => setFilmData(data))
+      .catch((error) => console.error(error));
+  }, []);
+
+  const directors = [
     "All",
-    ...new Set(
-      filmData.flatMap((film) =>
-        film.Genre.split(", ").map((genre) => genre.trim())
-      )
-    ),
+    ...new Set(filmData.map((film) => film.director)),
   ];
 
-  const toggleFavorite = (movieId) => {
-    if (favorites.includes(movieId)) {
-      setFavorites(
-        favorites.filter((id) => id !== movieId)
-      );
+  const toggleFavorite = (id) => {
+    if (favorites.includes(id)) {
+      setFavorites(favorites.filter((movieId) => movieId !== id));
     } else {
-      setFavorites([...favorites, movieId]);
+      setFavorites([...favorites, id]);
     }
   };
 
   const filteredMovies = filmData.filter((film) => {
-    const matchTitle = film.Title
+    const matchTitle = film.title
       .toLowerCase()
       .includes(search.toLowerCase());
 
-    const matchGenre =
-      selectedGenre === "All" ||
-      film.Genre.includes(selectedGenre);
+    const matchDirector =
+      selectedDirector === "All" ||
+      film.director === selectedDirector;
 
-    return matchTitle && matchGenre;
+    return matchTitle && matchDirector;
   });
 
   const favoriteMovies = filmData.filter((film) =>
-    favorites.includes(film.imdbID)
+    favorites.includes(film.id)
   );
 
   return (
@@ -49,26 +50,22 @@ function FilmList() {
           type="text"
           placeholder="Search a movie..."
           value={search}
-          onChange={(e) =>
-            setSearch(e.target.value)
-          }
+          onChange={(e) => setSearch(e.target.value)}
         />
       </div>
 
       <div className="tags">
-        {genres.map((genre) => (
+        {directors.map((director) => (
           <button
-            key={genre}
+            key={director}
             className={
-              selectedGenre === genre
+              selectedDirector === director
                 ? "tag active"
                 : "tag"
             }
-            onClick={() =>
-              setSelectedGenre(genre)
-            }
+            onClick={() => setSelectedDirector(director)}
           >
-            {genre}
+            {director}
           </button>
         ))}
       </div>
@@ -76,21 +73,21 @@ function FilmList() {
       {favoriteMovies.length > 0 && (
         <>
           <h2 className="section-title">
-            Mes favoris
+            ❤️ Mes favoris
           </h2>
 
           <div className="film-grid">
             {favoriteMovies.map((film) => (
               <Film
-                key={film.imdbID}
-                title={film.Title}
-                year={film.Year}
-                poster={film.Poster}
-                genre={film.Genre}
-                rating={film.imdbRating}
+                key={film.id}
+                title={film.title}
+                year={film.release_date}
+                poster={film.image}
+                director={film.director}
+                rating={film.rt_score}
                 isFavorite={true}
                 toggleFavorite={() =>
-                  toggleFavorite(film.imdbID)
+                  toggleFavorite(film.id)
                 }
               />
             ))}
@@ -99,35 +96,33 @@ function FilmList() {
       )}
 
       <h2 className="section-title">
-        Tous les films
+        Studio Ghibli
       </h2>
 
       {filteredMovies.length > 0 ? (
         <div className="film-grid">
           {filteredMovies.map((film) => (
             <Film
-              key={film.imdbID}
-              title={film.Title}
-              year={film.Year}
-              poster={film.Poster}
-              genre={film.Genre}
-              rating={film.imdbRating}
-              isFavorite={favorites.includes(
-                film.imdbID
-              )}
+              key={film.id}
+              title={film.title}
+              year={film.release_date}
+              poster={film.image}
+              director={film.director}
+              rating={film.rt_score}
+              isFavorite={favorites.includes(film.id)}
               toggleFavorite={() =>
-                toggleFavorite(film.imdbID)
+                toggleFavorite(film.id)
               }
             />
           ))}
         </div>
       ) : (
         <h2 className="no-movie">
-          No movie found 😢
+          Aucun film trouvé 😢
         </h2>
       )}
     </>
   );
 }
 
-export default FilmList; 
+export default FilmList;

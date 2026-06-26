@@ -2,7 +2,7 @@ function Film({
   title,
   year,
   poster,
-  genre,
+  director,
   rating,
   isFavorite,
   toggleFavorite,
@@ -33,7 +33,7 @@ function Film({
           </div>
         </div>
 
-        <p className="genre">{genre}</p>
+        <p className="genre">{director}</p>
       </div>
     </div>
   );
