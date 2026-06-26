@@ -1,6 +1,6 @@
-import Search from  "./Search"
-import Favorites from "./Favorites"
-import { useState, createContext } from "react";
+import Search from "./Search";
+import Favorites from "./Favorites";
+import { useState } from "react";
 import FavoriteContext from "./FavoriteContext";
 
 function App() {
