@@ -29,7 +29,8 @@
   width: 100%;
   flex: 1;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 0.1rem;
   /* height: max-content; */
 
 
@@ -43,9 +44,6 @@
       font-weight: bold;
       font-size: larger;
     }
-
-    
-
   }
 
   
@@ -64,8 +62,8 @@
   .movie-desc {
     display: inline-block;
     margin: 0 1rem;
-    text-overflow: ellipsis;
+    /* text-overflow: ellipsis;
     overflow: hidden;
-    white-space: preserve nowrap;
+    white-space: preserve nowrap; */
   }
 }

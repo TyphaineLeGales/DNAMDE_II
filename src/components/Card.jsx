@@ -32,7 +32,7 @@ export default function Card(props) {
           <span>★ {props.data.rt_score}</span>
         </div>
         <p className="movie-genres">{props.data.producer}</p>
-        <p className="movie-desc">{props.data.description}</p>
+        <p className="movie-desc">{props.data.description.slice(0, 100)}...</p>
       </div>
     </div>
   )

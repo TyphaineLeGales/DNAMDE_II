@@ -13,7 +13,7 @@ function App() {
   const [selectedGenre, setSelectedGenre] = useState('All');
 
   useEffect(() => {
-    handleSearch()
+    handleSearch();
   }, [selectedGenre])
 
   const handleSearch = (e, search = input.current.value, genre = selectedGenre) =>
@@ -28,7 +28,7 @@ function App() {
 
   // const genres = filtered.map(card => card.Genre.split(', '));
   // const genresSet = new Set(['All', ...genres.flat()]);  
-  const genres = filtered.reduce((prev, card) => { prev.push(card.producer); return prev }, []);
+  const genres = filtered.reduce((prev, card) => { prev.push(card.producer.split(', ')); return prev }, []);
   const genresSet = new Set(['All', ...genres.flat()]);
 
   return (
