@@ -1,16 +1,10 @@
 body{
-  padding: 0;
+  margin: 0;
   font-family: "Roboto", sans-serif;
 }
 
-.app-light{
-  --bg: white;
-  --text: black;
-}
-
-.app-dark{
-  --bg: rgb(40, 40, 40);
-  --text: white;
+.header{
+  position: static;
 }
 
 h2{
@@ -44,7 +38,7 @@ h2{
   object-fit: cover;
 }
 
-.movie-genre{
+.movie-director{
   text-align: center;
   color: rgb(113, 113, 113);
 }
@@ -61,6 +55,7 @@ h2{
 .search-container{
   display: flex;
   justify-content: center;
+  margin-top: 30px;
   padding-bottom: 20px;
 }
 
@@ -72,16 +67,16 @@ h2{
   height: 20px;
 }
 
-.genres{
+.directors{
   overflow: hidden;
 }
 
-.genre-text{
+.director-text{
   margin: 5px 15px;
   text-wrap: nowrap;
 }
 
-.genre-container{
+.director-container{
   background-color: rgb(218, 220, 225);
   border-radius: 15px;
   padding: 5px;
@@ -89,24 +84,57 @@ h2{
 }
 
 .active{
-  background-color: rgb(40, 40, 40);
+  background-color: rgb(40, 40, 40) !important;
   color: white;
 }
 
-.genre-list{
+.director-list{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
-.theme-btn{
+/* dark vs light mode */
+.dark{
+  background-color: rgb(24, 24, 24);
+}
+
+.search-title-dark{
+  color: rgb(216, 216, 216);
+}
+
+.dark-mode, .light-mode{
     position: fixed;
     right: 10px;
-    bottom: 10px;
     border-radius: 20px;
     background-color: rgb(40, 40, 40);
     color: white;
-    padding: 0 15px;
+    padding: 10px 15px;
+    border: none;
+}
+
+.dark-mode{
+  top: 10px;
+  background-color: rgb(45, 45, 45);
+}
+
+.light-mode{
+  top: 50px;
+  background-color: rgb(216, 216, 216);
+  color: black;
+}
+
+.film-dark{
+  background-color: rgb(33, 33, 33);
+}
+
+.text-dark{
+  color: rgb(216, 216, 216);
+}
+
+.btn-dark{
+  background-color: rgb(70, 70, 70);
+  color: rgb(216, 216, 216);
 }
