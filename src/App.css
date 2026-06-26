@@ -13,3 +13,53 @@
   border-radius: 20px;
   padding: 0 1rem;
 }
+
+.genre-filters { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+.genre-filters .tag { cursor: pointer; }
+.tag-active { background-color: #000a1b; color: white; }
+
+#app {
+  --bg: #f5f5f5;
+  --text: #222;
+  --card-bg: #fff;
+  --tag-bg: #eee;
+  --tag-text: #333;
+
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#app.dark {
+  --bg: #1a1a1a;
+  --text: #f0f0f0;
+  --card-bg: #2a2a2a;
+  --tag-bg: #3a3a3a;
+  --tag-text: #ddd;
+}
+
+/* suppression de la barre créé par le navigateur */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* mise en forme du bouton */ 
+.theme-toggle {
+  align-self: flex-end;
+  border: none;
+  background: none;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+}
+
+.theme-toggle img {
+  width: 50px;
+  height: 50px;
+}

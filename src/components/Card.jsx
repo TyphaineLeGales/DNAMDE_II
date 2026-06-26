@@ -1,23 +1,19 @@
 import './Card.css'
-
 export default function Card(props) {
+  const film = props.data;
   return (
     <div className="card">
-      {/* <picture className="movie-poster">
-        <source srcset={props.data.Images[0]} alt="Poster"/>
-        <source srcset="placeholder.webp" alt="Poster"/>
-        <img src="placeholder.webp" alt="" />
-        
-      </picture> */}
-      <img className="movie-poster" src={props.data.Images?.[0] ?? "placeholder.webp"} alt="Poster"/>
+      <img className="movie-poster" src={film.image ?? "placeholder.webp"} alt={film.title} />
       <div className="movie-data">
-        <p className="movie-title">{props.data.Title}</p>
+        <p className="movie-title">{film.title}</p>
         <div className="movie-infos">
-          <span>{props.data.Year}</span>
-          <span>★ {props.data.imdbRating}</span>
+          <span>{film.release_date}</span>
+          <span>★ {film.rt_score}</span>
         </div>
-        <p className="movie-genres">{props.data.Genre}</p>
-        <p className="movie-desc">{props.data.Plot}</p>
+        <div className="tags">
+          <span className="tag">{film.director}</span>
+        </div>
+        <p className="movie-desc">{film.description}</p>
       </div>
     </div>
   )
