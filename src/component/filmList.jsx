@@ -7,7 +7,7 @@ import { useState, useEffect } from "react" // import pour se souvenir
 
 // cette  fonction permet d'assigner les valeur de datafilm a la fonction film
 
-function FilmList (){
+function FilmList ({favorites, onToggleFavorite}){
     const [filmData, setFilmData] = useState([])
     const [search, setSearch] = useState("")
     const producerUniques = [...new Set(filmData.map((unFilm) => unFilm.producer.split(",")).flat())]
@@ -59,7 +59,11 @@ function FilmList (){
                 rt_score={unFilm.rt_score}
                 producer= {unFilm.producer}
                 description={unFilm.description}
-                image={unFilm.image} />
+                image={unFilm.image}
+                favorites = {favorites}
+                onToggleFavorite={onToggleFavorite}
+                />
+            
 
             ))}
         </div>

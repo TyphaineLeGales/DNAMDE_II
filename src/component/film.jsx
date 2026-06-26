@@ -1,4 +1,5 @@
-function Film ({title, producer, rt_score, running_time, description, image, isFavorite, onToggleFavorite}){
+function Film ({title, producer, rt_score, running_time, description, image, onToggleFavorite, favorites}){
+    const isFavorite = favorites.includes(title)
     return (
         <div className="film-card">
             <button className="button-fav" onClick={() => onToggleFavorite(title)}> 
