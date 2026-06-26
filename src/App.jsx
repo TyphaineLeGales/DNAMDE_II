@@ -4,7 +4,7 @@ import Favorites from "./components/Favorites";
 import "./index.css";
 
 function App() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
   const [page, setPage] = useState("search");
 
   const [favorites, setFavorites] = useState(() => {
