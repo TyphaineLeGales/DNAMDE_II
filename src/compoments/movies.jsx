@@ -4,22 +4,22 @@ function MovieCard({ movie }) {
   return (
     <div className="movie-card">
       <img
-        src={movie.Images[0]}
-        alt={movie.Title}
+        src={movie.image}
+        alt={movie.title}
         className="movie-image"
       />
 
       <div className="movie-content">
-        <h2>{movie.Title}</h2>
+        <h2>{movie.title}</h2>
 
         <div className="movie-info">
-          <span>{movie.Year}</span>
-          <span>⭐ {movie.imdbRating}</span>
+          <span>{movie.release_date}</span>
+          <span>⭐ {movie.rt_score}</span>
         </div>
 
-        <p className="genre">{movie.Genre}</p>
-
-        <p className="plot">{movie.Plot}</p>
+        <p className="plot">
+          {movie.description}
+        </p>
       </div>
     </div>
   );
