@@ -71,6 +71,8 @@ function App() {
         <Route path="/favoris" element={<Favorites filmData = {filmData} favorites= {favorites} onToggleFavorite = {onToggleFavorite}/>} />
         <Route path="/movieDetails/:title" element={<MovieDetail filmData={filmData}/>} />
             </Routes>
+
+            <Link className="button-page-search" to="/search">SEARCH</Link>
     
       {/* {page === "search" ?<FilmList favorites= {favorites} onToggleFavorite = {onToggleFavorite} filmData = {filmData}/> : 
       <Favorites filmData = {filmData} favorites= {favorites} onToggleFavorite = {onToggleFavorite}/>}*/}
