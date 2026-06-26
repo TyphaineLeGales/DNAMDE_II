@@ -1,8 +1,6 @@
-import ListFilm from "./compoments/listFilm.jsx";
 import { useState } from "react";
-import Explore from "./compoments/naviguation.jsx";
+import Explore from "./compoments/explore.jsx";
 import PageFavorite from "./compoments/favoritePage.jsx";
-import Naviguation from "./compoments/naviguation.jsx";
 import { BrowserRouter } from 'react-router-dom'
 import { Routes, Route } from 'react-router-dom'
 import { NavLink } from "react-router";
@@ -22,13 +20,19 @@ function App() {
       <button onClick={toggleDark} className="mode">
         {darkMode ? "☀️ Mode clair" : "🌙 Mode nuit"}
       </button>
-    </header>
       <BrowserRouter>
+      <nav>
+        <NavLink to="/explore" end>Explore</NavLink>
+        <NavLink to="/favorite" end>Favorite</NavLink>
+      </nav>
       <Routes>
+        <Route path="/" element={<Explore/>}/>
         <Route path="/explore" element={<Explore/>}/>
         <Route path="/favorite" element={<PageFavorite/>}/>
       </Routes>
-    </BrowserRouter>
+      </BrowserRouter>
+    </header>
+    
   </>
       
   )
