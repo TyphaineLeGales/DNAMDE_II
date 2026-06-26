@@ -24,8 +24,6 @@ body{
     transition:.4s;
 }
 
-
-
 .app{
     min-height:100vh;
     color:var(--text-color);
@@ -40,7 +38,6 @@ body{
     background:radial-gradient(circle at top,#17254d 0%,#090b13 60%);
     min-height:100vh;
 }
-
 
 h1 {
   text-align: center;
@@ -137,7 +134,6 @@ h1 {
   transform: scale(1.08);
 }
 
-
 .film-content {
   padding: 20px;
   display: flex;
@@ -207,7 +203,6 @@ h1 {
   animation: loading 1.2s infinite;
 }
 
-
 .theme-btn {
   display: block;
   margin: 20px auto;
@@ -219,9 +214,6 @@ h1 {
   color: var(--text-color);
   box-shadow: 0 2px 10px var(--shadow);
 }
-
-
-
 
 .genres {
   display: flex;
@@ -251,13 +243,11 @@ h1 {
   color: white;
 }
 
-
 .no-result {
   text-align: center;
   font-size: 1.3rem;
   margin-top: 40px;
 }
-
 
 @keyframes loading {
   from {
