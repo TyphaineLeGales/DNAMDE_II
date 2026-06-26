@@ -1,4 +1,54 @@
+.nav {
+  width: 100%;
+  padding: 2rem 0 0 0;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
 
+.header-select {
+  width: 60%;
+  height: 5rem;
+  margin: 2% auto auto none;
+  display: flex;
+  justify-content: center;
+  gap: 15%;
+  padding: 2rem 0 0 0;
+}
+
+.header-link {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.692);
+  font-weight: 700;
+  background: none;
+  border: none;
+  width: fit-content;
+  padding: 0 0.5rem 0 0.5rem;
+  transition: all ease-in 0.3s;
+  transform-origin: center;
+}
+
+.header-link:hover {
+  font-size: 1.8rem;
+}
+
+.active {
+  font-size: 1.8rem;
+  color: rgb(255, 255, 255);
+  border-bottom: 2px solid white;
+}
+
+.theme-select-btn {
+  background: rgba(255, 255, 255, 0.23);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.1px);
+  -webkit-backdrop-filter: blur(5.1px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: rgba(48, 48, 48, 0.404);
+  font-weight: 600;
+}
 
 .input-bar {
   width: 30rem;
@@ -11,6 +61,12 @@
   backdrop-filter: blur(5.1px);
   -webkit-backdrop-filter: blur(5.1px);
   border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.input-bar::placeholder {
+  color: rgba(48, 48, 48, 0.404);
+  padding: 0 0.5rem 00;
+  font-weight: 600;
 }
 
 section {
