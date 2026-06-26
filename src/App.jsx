@@ -1,10 +1,12 @@
 import FilmList from "./component/filmList.jsx"
 import { useState, useEffect } from "react"
 import Favorites from "./component/favoris.jsx"
+import { BrowserRouter, Routes, Route, Link} from "react-router-dom"
+
 function App() {
   const [theme, setTheme] = useState("light")
   //const [favorites, setFavorites] = useState([])
-  const [page, setPage] = useState("search")
+  //const [page, setPage] = useState("search")
   const [filmData, setFilmData] = useState([])
 
   const [favorites, setFavorites] = useState(() => {
@@ -42,6 +44,8 @@ function App() {
 
 
   return (
+    <BrowserRouter>
+
     <div className={theme === "dark" ? "dark" : "light"}>
       <div className="wrapp-theme">
         <button 
@@ -50,22 +54,30 @@ function App() {
         </button>
       </div>
       <div className="wrapp-pages">
-        <button className="button-page-search" onClick={() => setPage("search")}>
+        {/*<button className="button-page-search" onClick={() => setPage("search")}>
           SEARCH
         </button>
         <button className="button-page-search" onClick={() => setPage("favoris")}>
           FAVORIS
-        </button>
-      </div>
-      {page === "search" ?<FilmList 
-              favorites= {favorites}
-              onToggleFavorite = {onToggleFavorite}
-              filmData = {filmData}
-      /> : <Favorites 
-      filmData = {filmData}
-      favorites= {favorites}
-      onToggleFavorite = {onToggleFavorite}/>}
+        </button>*/}
+
+        <Link className="button-page-search" to="/search">SEARCH</Link>
+        <Link className="button-page-search" to="/favoris">favoris</Link>
+        </div>
+            <Routes>
+
+        <Route path="/search" element={<FilmList favorites= {favorites} onToggleFavorite = {onToggleFavorite} filmData = {filmData}/>} />
+        <Route path="/favoris" element={<Favorites filmData = {filmData} favorites= {favorites} onToggleFavorite = {onToggleFavorite}/>} />
+            </Routes>
+    
+      {/* {page === "search" ?<FilmList favorites= {favorites} onToggleFavorite = {onToggleFavorite} filmData = {filmData}/> : 
+      <Favorites filmData = {filmData} favorites= {favorites} onToggleFavorite = {onToggleFavorite}/>}*/}
+
+
+
     </div>
+
+  </BrowserRouter>
   )
 }
 
