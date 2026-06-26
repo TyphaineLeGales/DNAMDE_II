@@ -16,18 +16,23 @@
 
   }
 
-  .body .light {
+  body{
+    width: 100vw;
+  }
+
+  body .light {
     background-color: var(--light-mode-page-bg);
 }
 
 
-.body .dark {
+body .dark {
     background-color: var(--dark-mode-page-bg);
 }
 
 
 
 .movies-container{
+    width: 1126px;
     display:grid;
     grid-template-columns: 350px 350px 350px;
     grid-template-rows: min-content;

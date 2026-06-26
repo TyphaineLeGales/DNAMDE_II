@@ -21,11 +21,27 @@
   
 }
 
+.light .searchbar {
+    color:var(--light-mode-text-color)
+}
+
+.dark .searchbar {
+    color:var(--dark-mode-text-color)
+}
+
+
+.dark .input-field {
+    border: 1px solid var(--dark-mode-text-color);
+    background :none;
+    color: var(--dark-mode-text-color);
+}
+
 .input-field{
     width: 200px;
     padding: 10px 20px;
     border-radius: 50px;
     border: 0px;
+    margin-left: 10px;
 }
 
 .filters-buttons-container{
