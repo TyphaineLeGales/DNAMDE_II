@@ -5,13 +5,6 @@ function ClippedPoster(props){
 
   //  const [isActive, setIsActive] = useState(false);
 
-    const handleClick = (event) => {
-    event.preventDefault();
-    // setIsActive(isActive => !isActive);
-    // if(!isActive) localStorage.setItem("favorite", props.favorite);
-    // else localStorage.removeItem("favorite", props.favorite);
-  };
-
  return(
     <>
     <div className="poster-container"  style={{ background: props.fillColor}, {background : props.bgColor}} >
@@ -34,7 +27,7 @@ function ClippedPoster(props){
         </div>
        
     </figure>
-     <Heart active={props.isActive} handleClick={handleClick, props.setFav}/>
+     <Heart active={props.isActive} handleClick={props.setFav}/>
      </div>
  </>
  )

@@ -3,10 +3,12 @@ import "../ClippedPoster.css";
 import ClippedPoster from "./ClippedPoster";
 import properties from "./ClippedProperties.json";
 import InputBar from "./InputBar";
+import Loading from "./Loading";
 
 function PosterDisplay(props) {
   const [films, setFilms] = useState([]);
   const [favorites, setFavorites] = useState([]);
+    const [dataLoad, isDataLoad] = useState(false);
 
   const filmStorage = { ...localStorage };
 
@@ -16,6 +18,7 @@ function PosterDisplay(props) {
       .then((response) => response.json())
       .then((json) => {
         setFilms(json);
+        isDataLoad(true)
       });
 
     ////////
@@ -59,7 +62,7 @@ function PosterDisplay(props) {
         <>
           <InputBar valueChange={handleChange}></InputBar>
           <section>
-            {ghibliFilms.slice(0, 20).map((film, index) => (
+            {dataLoad ? ghibliFilms.slice(0, 20).map((film, index) => (
               <ClippedPoster
                 key={film.title}
                 image={film.image}
@@ -71,7 +74,7 @@ function PosterDisplay(props) {
                 setFav={() => updateFavorites(film)}
                 isActive={isInFavorite(film)}
               />
-            ))}
+            )) : <Loading />}
           </section>
         </>
       ) : (
