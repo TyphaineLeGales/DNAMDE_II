@@ -14,8 +14,6 @@ export default function Film({
 
   return (
     <div className="film-card">
-      
-      {/* COEUR FAVORIS */}
       <button
         className={`favorite-heart ${isFavorite ? "active" : ""}`}
         onClick={() => toggleFavorite(film)}
@@ -23,7 +21,6 @@ export default function Film({
         {isFavorite ? "❤️" : "🤍"}
       </button>
 
-      {/* IMAGE + LINK DETAILS */}
       <Link to={`/movie/${film.id}`} className="movie-link">
         <img src={image} alt={title} />
       </Link>
