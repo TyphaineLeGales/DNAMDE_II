@@ -8,6 +8,9 @@ function ThemeSelect() {
     event.preventDefault();
     setActive((active) => !active);
 
+    localStorage.clear();
+    console.log(localStorage);
+
     if (active) {
       document.body.classList.add("dark-theme");
       document.body.classList.remove("light-theme");

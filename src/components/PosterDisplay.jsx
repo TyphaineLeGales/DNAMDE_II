@@ -5,6 +5,7 @@ import properties from "./ClippedProperties.json";
 import InputBar from "./InputBar";
 
 function PosterDisplay(props) {
+
   const [films, setFilms] = useState([]);
 
   useEffect(() => {
@@ -18,9 +19,12 @@ function PosterDisplay(props) {
 
   const [value, setValue] = useState(" ");
 
+ const favorites = { ...localStorage };
+
   const handleChange = (e) => {
     e.preventDefault();
     setValue(e.target.value);
+
   };
 
   const ghibliFilms = films.filter((film) => {
@@ -51,7 +55,7 @@ function PosterDisplay(props) {
           </section>
         </>
       ) : (
-        console.log(localStorage)
+        "hello"
       )}
     </>
   );

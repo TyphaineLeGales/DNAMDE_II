@@ -8,6 +8,7 @@ function ClippedPoster(props){
     const handleClick = (event) => {
     setIsActive(isActive => !isActive);
     localStorage.setItem(props.posterInfo, props.keyItem);
+    console.log(localStorage);
 
 
   };
