@@ -80,6 +80,8 @@ code {
 
 }
 
+
+/* le mode */ 
 .app.light {
   --bg:  white;
   --text-h: #08060d;

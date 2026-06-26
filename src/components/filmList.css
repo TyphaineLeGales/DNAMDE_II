@@ -1,0 +1,120 @@
+:root {
+  --doux: #fff3e9;
+  --creme: #ffe9d7;
+  --contour: #ffbd61;
+  --text-color: #333;
+   --onix: #1c1e22;
+}
+
+
+/* ── BAREEEE DE RECHEERRCCHEEE ICI  ── */
+.recherche {
+  padding: 32px 24px 0;
+  max-width: 480px;
+  margin: 10px;
+}
+
+.recherche {
+  width: 100%;
+  font-size: 0.95rem;
+  color: var(--onix);
+  background: var(--creme);
+  border: 1.5px solid var(--contour);
+  border-radius: 24px;
+  padding: 10px 18px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.recherche::placeholder {
+  color: #dd4848;
+}
+
+
+
+.recherche:focus {
+  outline: none;
+  border-color: var(--onix);
+  box-shadow: 0 0 0 3px var(--creme);
+}
+/* ── BOUTON DE REINITIALISATION DES FILTRES ── */
+.clear-filters {
+  margin-top: 12px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1.5px solid var(--contour);
+  background: #fff;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+/* ── FILTRES DU GENRE DU FILMMSS s ── */
+.genre-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+}
+
+.genre-filters button {
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1.5px solid var(--contour);
+  background: #fff;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+
+.genre-filters button {
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1.5px solid var(--contour);
+  background: #fff;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.genre-filters button:hover {
+  background: var(--creme);
+  border-color: var(--onix);
+  color: var(--onix);
+}
+
+.genre-filters button.active {
+  background: var(--onix);
+  border-color: var(--onix);
+  color: #fff;
+}
+
+/* ── GRILLE (GRID) DES FILMS  ── */
+.film-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  gap: 24px;
+  padding: 8px 24px 40px;
+}
+
+@media (max-width: 768px) {
+  .film-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .film-grid {
+    grid-template-columns: 1fr;
+    padding: 8px 16px 32px;
+  }
+}
+

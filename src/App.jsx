@@ -1,12 +1,25 @@
-import React from 'react';
-import Cinema from './components/cinema';
+
+import { useState } from "react";
+import FilmList from "./components/FilmList.jsx";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDark = () => {
+    setDarkMode(!darkMode);
+    document.documentElement.classList.toggle("dark");
+  };
+
   return (
-    <Cinema />
+    <div className={darkMode ? "dark" : ""}>
+      <button onClick={toggleDark} className="mode">
+        {darkMode ? "✧ Mode clair ✧" : "✦ Mode nuit ✦"}
+      </button>
+      <FilmList />
+    </div>
   );
 }
 
-export default App;
 
-// LOGIQUEMENT tt est bon, TOUCHE PAS ICI //
+// ici le mode sombre marche pas //
+export default App;

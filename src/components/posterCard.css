@@ -1,0 +1,67 @@
+:root {
+  --doux: #fff3e9;
+  --creme: #ffe9d7;
+  --contour: #ffbd61;
+  --text-color: #333;
+   --onix: #1c1e22;
+}
+
+@keyframes feur {
+  0% { background-position: -600px 0; }
+  100% { background-position: 600px 0; }
+}
+
+/* Ici le chargemnt qd les cartes charges */
+.totoro {
+  background: linear-gradient(
+    90deg,
+    var(--creme) 25%,
+    var(--contour) 50%,
+    var(--creme) 75%
+  );
+  background-size: 600px 100%;
+  animation: feur 1.4s infinite ease-in-out;
+  border-radius: 6px;
+}
+
+.poster-card {
+  background: #ffffff;
+  border: 0.5px solid var(--contour);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+.poster-image {
+  width: 100%;
+  height: 220px;
+  border-radius: 0;
+}
+
+.poster-body {
+  padding: 14px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.poster-line {
+  height: 12px;
+}
+
+.poster-line.title {
+  width: 65%;
+  height: 16px;
+}
+
+.poster-line.meta {
+  width: 40%;
+}
+
+.poster-line.desc {
+  width: 100%;
+}
+
+.poster-line.desc-short {
+  width: 75%;
+}
