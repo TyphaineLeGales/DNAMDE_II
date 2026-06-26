@@ -5,6 +5,7 @@ function App() {
   const [theme, setTheme] = useState("light")
   const [favorites, setFavorites] = useState([])
   const [page, setPage] = useState("search")
+  const [filmData, setFilmData] = useState([])
   // pour que cela s'applique partout.
   useEffect(() => {
     document.body.className = theme
@@ -19,6 +20,18 @@ function App() {
       setFavorites([...favorites, title])
     }
   }
+
+
+
+    useEffect (() => {
+    fetch("https://ghibliapi.vercel.app/films/")
+        .then((response) => response.json())
+        .then((data) => {
+       //ici data va être le tableau de film
+        setFilmData(data)
+    })}, [])
+
+
 
   return (
     <div className={theme === "dark" ? "dark" : "light"}>
@@ -37,9 +50,13 @@ function App() {
         </button>
       </div>
       {page === "search" ?<FilmList 
-      favorites= {favorites}
+              favorites= {favorites}
               onToggleFavorite = {onToggleFavorite}
-      /> : <Favorites />}
+              filmData = {filmData}
+      /> : <Favorites 
+      filmData = {filmData}
+      favorites= {favorites}
+      onToggleFavorite = {onToggleFavorite}/>}
     </div>
   )
 }

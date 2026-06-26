@@ -7,8 +7,7 @@ import { useState, useEffect } from "react" // import pour se souvenir
 
 // cette  fonction permet d'assigner les valeur de datafilm a la fonction film
 
-function FilmList ({favorites, onToggleFavorite}){
-    const [filmData, setFilmData] = useState([])
+function FilmList ({favorites, onToggleFavorite, filmData}){
     const [search, setSearch] = useState("")
     const producerUniques = [...new Set(filmData.map((unFilm) => unFilm.producer.split(",")).flat())]
     //ci dessus cela créer un tableau sans doublon des genre
@@ -19,14 +18,6 @@ function FilmList ({favorites, onToggleFavorite}){
 // je sais qu'il faut utiliser suspense mais je n'y arrive vraiment pas. 
 
 
-
-    useEffect (() => {
-    fetch("https://ghibliapi.vercel.app/films/")
-        .then((response) => response.json())
-        .then((data) => {
-       //ici data va être le tableau de film
-        setFilmData(data)
-    })}, [])
 
 
     return (
