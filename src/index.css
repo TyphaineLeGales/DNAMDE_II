@@ -16,27 +16,27 @@
   --shadow: rgba(0, 0, 0, .45);
 }
 
-body{
-    margin:0;
-    font-family:'Poppins', sans-serif;
-    background:var(--bg-color);
-    color:var(--text-color);
-    transition:.4s;
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: .4s;
 }
 
-.app{
-    min-height:100vh;
-    color:var(--text-color);
-    transition:.4s;
+.app {
+  min-height: 100vh;
+  color: var(--text-color);
+  transition: .4s;
 }
 
-.app.light{
-    background:linear-gradient(180deg,#eef2ff,#ffffff);
+.app.light {
+  background: linear-gradient(180deg, #eef2ff, #ffffff);
 }
 
-.app.dark{
-    background:radial-gradient(circle at top,#17254d 0%,#090b13 60%);
-    min-height:100vh;
+.app.dark {
+  background: radial-gradient(circle at top, #17254d 0%, #090b13 60%);
+  min-height: 100vh;
 }
 
 h1 {
@@ -174,21 +174,36 @@ h1 {
   position: absolute;
   top: 15px;
   right: 15px;
-  width: 45px;
-  height: 45px;
+
+  width: 44px;
+  height: 44px;
+
   border: none;
   border-radius: 50%;
-  background: rgba(0, 0, 0, .5);
-  backdrop-filter: blur(8px);
-  font-size: 24px;
+
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(10px);
+
+  font-size: 20px;
   cursor: pointer;
-  transition: .3s;
-  opacity: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.25s ease;
+  z-index: 10;
 }
 
 .favorite-heart:hover {
   transform: scale(1.15);
-  background: white;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.favorite-heart.active {
+  background: rgba(255, 0, 80, 0.2);
+  box-shadow: 0 0 20px rgba(255, 0, 80, 0.4);
+  transform: scale(1.1);
 }
 
 .film-card:hover .favorite-heart {
@@ -257,4 +272,22 @@ h1 {
   to {
     background-position: -200% 0;
   }
+}
+
+.movie-details {
+  display: flex;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 30px;
+}
+
+.movie-details img {
+  width: 350px;
+  border-radius: 20px;
+}
+
+.movie-link {
+  text-decoration: none;
+  color: inherit;
 }

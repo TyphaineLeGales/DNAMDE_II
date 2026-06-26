@@ -1,15 +1,21 @@
 import { useState, useEffect } from "react";
 import FilmList from "./components/FilmList";
 import Favorites from "./components/Favorites";
+import MovieDetails from "./components/MovieDetails";
 import "./index.css";
+
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+} from "react-router-dom";
 
 function App() {
   const [theme, setTheme] = useState("dark");
-  const [page, setPage] = useState("search");
 
   const [favorites, setFavorites] = useState(() => {
-    const savedFavorites =
-      localStorage.getItem("favorites");
+    const savedFavorites = localStorage.getItem("favorites");
 
     return savedFavorites
       ? JSON.parse(savedFavorites)
@@ -46,41 +52,70 @@ function App() {
   };
 
   return (
-    <div className={`app ${theme}`}>
-      <h1>Bonjour Sara</h1>
+    <BrowserRouter>
+      <div className={`app ${theme}`}>
 
-      <div className="header">
-        <button
-          onClick={() => setPage("search")}
-        >
-          Search
-        </button>
+        <h1>Bonjour Sara</h1>
 
-        <button
-          onClick={() => setPage("favorites")}
-        >
-          Favorites ({favorites.length})
-        </button>
+        <div className="header">
+          <Link to="/search">
+            <button>Search</button>
+          </Link>
 
-        <button onClick={toggleTheme}>
-          {theme === "light"
-            ? "Dark mode"
-            : "Light mode"}
-        </button>
+          <Link to="/favorites">
+            <button>
+              Favorites ({favorites.length})
+            </button>
+          </Link>
+
+          <button onClick={toggleTheme}>
+            {theme === "light"
+              ? "Dark mode"
+              : "Light mode"}
+          </button>
+        </div>
+
+        <Routes>
+
+          <Route
+            path="/search"
+            element={
+              <FilmList
+                favorites={favorites}
+                toggleFavorite={toggleFavorite}
+              />
+            }
+          />
+
+          <Route
+            path="/favorites"
+            element={
+              <Favorites
+                favorites={favorites}
+                toggleFavorite={toggleFavorite}
+              />
+            }
+          />
+
+          <Route
+            path="/movie/:id"
+            element={<MovieDetails />}
+          />
+
+          <Route
+            path="*"
+            element={
+              <FilmList
+                favorites={favorites}
+                toggleFavorite={toggleFavorite}
+              />
+            }
+          />
+
+        </Routes>
+
       </div>
-
-      {page === "search" ? (
-        <FilmList
-          favorites={favorites}
-          toggleFavorite={toggleFavorite}
-        />
-      ) : (
-        <Favorites
-          favorites={favorites}
-          toggleFavorite={toggleFavorite}
-        />
-      )}
-    </div>
+    </BrowserRouter>
   );
 }
 

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Film({
   film,
   title,
@@ -8,31 +10,29 @@ export default function Film({
   favorites,
   toggleFavorite,
 }) {
-  const isFavorite = favorites.some(
-    (fav) => fav.id === film.id
-  );
+  const isFavorite = favorites.some((fav) => fav.id === film.id);
 
   return (
     <div className="film-card">
+      
+      {/* COEUR FAVORIS */}
       <button
-        className="favorite-heart"
+        className={`favorite-heart ${isFavorite ? "active" : ""}`}
         onClick={() => toggleFavorite(film)}
       >
         {isFavorite ? "❤️" : "🤍"}
       </button>
 
-      <img src={image} alt={title} />
+      {/* IMAGE + LINK DETAILS */}
+      <Link to={`/movie/${film.id}`} className="movie-link">
+        <img src={image} alt={title} />
+      </Link>
 
       <div className="film-content">
         <h3>{title}</h3>
-
-        <p>{year}</p>
-
-        <p>⭐ {rating}/100</p>
-
-        <p className="film-plot">
-          {plot}
-        </p>
+        <p className="film-year">{year}</p>
+        <p className="film-rating">⭐ {rating}/100</p>
+        <p className="film-plot">{plot}</p>
       </div>
     </div>
   );
