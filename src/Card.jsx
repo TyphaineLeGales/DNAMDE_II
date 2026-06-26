@@ -1,4 +1,5 @@
 import "./card.css";
+import HeartButton from "./HeartButton"
 
 function Card(props) {
  // console.log(props);
@@ -6,7 +7,7 @@ function Card(props) {
   return (
     <div className="card">
       <img src={props.data.image} alt="" className="movie-picture" />
-      <img className="favorite-icon" src="src/assets/no-filled-heart-icon.svg" alt="" />
+      <HeartButton/>
       <h1 className="movie-title"> {props.data.title} </h1>
       <div className="movie-date-rate-container">
         <p className="movie-date">{props.data.release_date}</p>
