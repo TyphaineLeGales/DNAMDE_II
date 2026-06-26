@@ -2,6 +2,7 @@ import FilmList from "./component/filmList.jsx"
 import { useState, useEffect } from "react"
 import Favorites from "./component/favoris.jsx"
 import { BrowserRouter, Routes, Route, Link} from "react-router-dom"
+import MovieDetail from "./component/movieDetail.jsx"
 
 function App() {
   const [theme, setTheme] = useState("light")
@@ -68,6 +69,7 @@ function App() {
 
         <Route path="/search" element={<FilmList favorites= {favorites} onToggleFavorite = {onToggleFavorite} filmData = {filmData}/>} />
         <Route path="/favoris" element={<Favorites filmData = {filmData} favorites= {favorites} onToggleFavorite = {onToggleFavorite}/>} />
+        <Route path="/movieDetails/:title" element={<MovieDetail filmData={filmData}/>} />
             </Routes>
     
       {/* {page === "search" ?<FilmList favorites= {favorites} onToggleFavorite = {onToggleFavorite} filmData = {filmData}/> : 
