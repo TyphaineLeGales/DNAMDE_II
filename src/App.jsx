@@ -7,12 +7,18 @@ function App() {
   const [search, setSearch] = useState("");
   const [darkMode, setDarkMode] = useState(false);
 
-  useEffect(() => {
-    fetch("https://ghibliapi.vercel.app/films")
-      .then((response) => response.json())
-      .then((data) => setFilms(data))
-      .catch((error) => console.error(error));
-  }, []);
+useEffect(() => {
+  setFilms([
+    {
+      id: "1",
+      title: "Mon voisin Totoro",
+      image: "https://image.tmdb.org/t/p/w500/rtGDOeG9LzoerkDGZF9dnVeLppL.jpg",
+      release_date: "1988",
+      description: "Film de Studio Ghibli",
+      rt_score: "93"
+    }
+  ]);
+}, []);
 
   const filteredMovies = films.filter((movie) =>
     movie.title.toLowerCase().includes(search.toLowerCase())
