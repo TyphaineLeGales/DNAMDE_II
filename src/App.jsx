@@ -1,10 +1,11 @@
 import Search from  "./Search"
 import Favorites from "./Favorites"
 import { useState, createContext } from "react";
+import FavoriteContext from "./FavoriteContext";
 
 function App() {
-    const [favorite, setFavorite] = useState(false);
-    
+    const [favorite, setFavorite] = useState([]);
+  
     const FavoritesContext = createContext(favorite);
 
     const addToFavorites = () => {
@@ -14,10 +15,10 @@ function App() {
       };
   
     return (
-    <FavoritesContext value={favorite}>
+    <FavoriteContext  value={{ favorite, setFavorite }}>
          <div> <Search addToFavorites={addToFavorites}/></div>
          <div> <Favorites favorite={favorite}/></div>
-    </FavoritesContext>
+    </FavoriteContext>
     )
 
     
