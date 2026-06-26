@@ -1,6 +1,6 @@
 import ListFilm from "./compoments/listFilm.jsx";
 import { useState } from "react";
-import SqueletteCard from "./compoments/squeletteCard.jsx";
+// import SqueletteCard from "./compoments/squeletteCard.jsx";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);

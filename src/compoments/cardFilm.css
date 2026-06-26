@@ -97,11 +97,16 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: red;  
+    color: var(--primary-color);  
     line-height: 0;   
     padding: 0; 
 }
 
 .like-btn:hover {
     transform: scale(1.1); 
+}
+
+.like-btn.liked {
+    color: var(--primary-color);
+    /* background: rgb(255, 220, 220); */
 }

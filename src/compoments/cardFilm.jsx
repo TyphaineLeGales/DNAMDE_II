@@ -1,4 +1,5 @@
 import "./cardFilm.css";
+import { useState } from "react";
 //JSON LOCAL
 // function CardFilm({ film }) {
 //     return (
@@ -18,6 +19,7 @@ import "./cardFilm.css";
 // }
 
 function CardFilm({ film }) {
+    const [liked, setLiked] = useState(false);
     return (
         <div className="film-card">
             <div className="film-image-container">
@@ -26,7 +28,12 @@ function CardFilm({ film }) {
                     alt={film.title}
                     onError={(e) => e.target.src = film.image}
                 />
-                <button className="like-btn">♡</button>
+                <button 
+                    className={`like-btn ${liked ? "liked" : ""}`} 
+                    onClick={() => setLiked(!liked)}  
+                >
+                    {liked ? "♥" : "♡"} 
+                </button>
             </div>
             <div className="film-info">
                 <h2>{film.title}</h2>
