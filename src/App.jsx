@@ -3,6 +3,9 @@ import { useState } from "react";
 import Explore from "./compoments/naviguation.jsx";
 import PageFavorite from "./compoments/favoritePage.jsx";
 import Naviguation from "./compoments/naviguation.jsx";
+import { BrowserRouter } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
+import { NavLink } from "react-router";
 // import SqueletteCard from "./compoments/squeletteCard.jsx";
 
 function App() {
@@ -14,16 +17,20 @@ function App() {
   };
 
   return (
-    <div>
+  <>
+    <header>
       <button onClick={toggleDark} className="mode">
         {darkMode ? "☀️ Mode clair" : "🌙 Mode nuit"}
       </button>
-      <Naviguation/>
-
-      <h1>Hello Louane 🌞</h1>
-      <ListFilm/>
-    </div>
-    // <div><SqueletteCard/></div>
+    </header>
+      <BrowserRouter>
+      <Routes>
+        <Route path="/explore" element={<Explore/>}/>
+        <Route path="/favorite" element={<PageFavorite/>}/>
+      </Routes>
+    </BrowserRouter>
+  </>
+      
   )
 }
 
