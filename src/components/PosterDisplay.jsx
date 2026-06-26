@@ -44,12 +44,14 @@ function PosterDisplay(props) {
                 id={properties[index % properties.length].id}
                 bgColor={properties[index % properties.length].bgColor}
                 fillColor={properties[index % properties.length].fillColor}
+                posterInfo={film.title}
+                keyItem={index}
               />
             ))}
           </section>
         </>
       ) : (
-        "hello"
+        console.log(localStorage)
       )}
     </>
   );
