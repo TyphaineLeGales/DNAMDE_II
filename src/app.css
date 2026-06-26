@@ -1,6 +1,34 @@
+:root {
+    --light-mode-page-bg:  rgb(235, 232, 229);
+    --dark-mode-page-bg: black;
+
+    --light-mode-bg:rgb(28, 28, 28);
+    --light-mode-bg: rgb(255, 255, 255);
+
+    --light-mode-hover-bg: black;
+    --dark-mode-hover-bg: rgb(255, 255, 255);
+
+    --light-mode-text-color: black;
+    --dark-mode-text-color: rgb(255, 255, 255);
+
+    --light-mode-hover-text-color:rgb(255, 255, 255);
+    --dark-mode-hover-text-color:black;
+
+  }
+
+  .body .light {
+    background-color: var(--light-mode-page-bg);
+}
+
+
+.body .dark {
+    background-color: var(--dark-mode-page-bg);
+}
+
+
 
 .movies-container{
-    display: grid;
+    display:grid;
     grid-template-columns: 350px 350px 350px;
     grid-template-rows: min-content;
     gap: 20px;
@@ -10,14 +38,31 @@
 
 }
 
+.color-mode-container{
+    display: flex;
+ justify-content: right;
+}
+
+.color-mode-button{
+  
+    margin-top: 60px;
+    border-radius: 20px;
+    padding: 10px 20px;
+    border: 0px;
+    background-color: var(--light-mode-bg);
+}
+
 @media (max-width : 1200px) {
     .movies-container{
         grid-template-columns: 30vw 30vw 30vw;
+        margin: 5vw 2.5vw;
+      
     }
 }
 
 @media (max-width : 680px) {
     .movies-container{
         grid-template-columns: 80vw;
+        margin: 5vw 10vw;
     }
 }

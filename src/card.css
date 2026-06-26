@@ -1,3 +1,23 @@
+:root {
+    --light-mode-page-bg:  rgb(235, 232, 229);
+    --dark-mode-page-bg: black;
+
+    --dark-mode-bg:rgb(28, 28, 28);
+    --light-mode-bg: rgb(255, 255, 255);
+
+    --light-mode-hover-bg: black;
+    --dark-mode-hover-bg: rgb(255, 255, 255);
+
+    --light-mode-text-color: black;
+    --dark-mode-text-color: rgb(255, 255, 255);
+
+    --light-mode-hover-text-color:rgb(255, 255, 255);
+    --dark-mode-hover-text-color:black;
+
+  }
+
+
+
 .movie-picture{
     width: 100%;
     height: 40%;
@@ -10,14 +30,23 @@
 width: 100%;
 }
 
+
+
+.light .card{
+    background-color: var(--light-mode-bg);
+    color:var(--light-mode-text-color)
+}
+
+.dark .card{
+    background-color: var(--dark-mode-bg);
+    color:var(--dark-mode-text-color)
+}
+
+
 .card{
-    background-color: white;
-    border: 0px solid black;
     border-radius: 40px;
     padding: 20px;
     flex: 1;
-
-    
 }
 
 .card:hover{
@@ -27,6 +56,9 @@ transition: all 0.5s ease-in-out;
    
 }
 
+
+.light .movie-title{    color:var(--light-mode-text-color)}
+.dark .movie-title{    color:var(--darkt-mode-text-color)}
 
 .movie-title{
 

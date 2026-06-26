@@ -1,5 +1,24 @@
+:root {
+    --light-mode-page-bg:  rgb(235, 232, 229);
+    --dark-mode-page-bg: black;
+
+    --light-mode-bg:rgb(28, 28, 28);
+    --light-mode-bg: rgb(255, 255, 255);
+
+    --light-mode-hover-bg: black;
+    --dark-mode-hover-bg: rgb(255, 255, 255);
+
+    --light-mode-text-color: black;
+    --dark-mode-text-color: rgb(255, 255, 255);
+
+    --light-mode-hover-text-color:rgb(255, 255, 255);
+    --dark-mode-hover-text-color:black;
+
+  }
+
 .filters-container{
-    margin-top: 100px;
+    margin-top: 20px;
+  
 }
 
 .input-field{
@@ -13,21 +32,41 @@
     margin-top: 50px;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 button{
     border-radius: 20px;
     padding: 10px 20px;
     border: 0px;
-    background-color: rgb(255, 255, 255);
+ 
 }
 
-button:hover{
-    background-color: rgb(0, 0, 0);
-    color: white;
+.light button{   background-color: var(--light-mode-bg);
+color: var(--light-mode-text-color);}
+.dark button{   background-color: var(--dark-mode-bg);
+color: var(--dark-mode-text-color);}
+
+
+
+.light button:hover{
+    background-color: var(--light-mode-hover-bg);
+    color: var(--light-mode-hover-text-color);
 }
 
-.active{
-    background-color: rgb(0, 0, 0);
-    color: white;
+.dark button:hover{
+    background-color: var(--dark-mode-hover-bg);
+    color: var(--dark-mode-hover-text-color);
+}
+
+.light .active{
+    background-color: var(--light-mode-hover-bg);
+    color: var(--light-mode-hover-text-color);
+
+}
+
+.dark .active{
+    background-color: var(--dark-mode-hover-bg);
+    color: var(--dark-mode-hover-text-color);
+
 }

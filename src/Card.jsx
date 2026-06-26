@@ -5,16 +5,16 @@ function Card(props) {
 
   return (
     <div className="card">
-      <img src={props.data.Images[2]} alt="" className="movie-picture" />
-      <h1 className="movie-title"> {props.data.Title} </h1>
+      <img src={props.data.image} alt="" className="movie-picture" />
+      <h1 className="movie-title"> {props.data.title} </h1>
       <div className="movie-date-rate-container">
-        <p className="movie-date">{props.data.Year}</p>
+        <p className="movie-date">{props.data.release_date}</p>
         <div className="movie-rate">
-          <p>⭐ {props.data.imdbRating}</p>
+          <p>⭐ {props.data.rt_score}</p>
         </div>
       </div>
       <p className="movie-genres">{props.data.Genre}</p>
-      <p className="movie-synopsis"> {props.data.Plot}</p>
+      <p className="movie-synopsis"> {props.data.description}</p>
     </div>
   );
 }
