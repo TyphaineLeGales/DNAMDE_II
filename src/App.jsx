@@ -32,9 +32,7 @@ function App() {
       </Routes>
       </BrowserRouter>
     </header>
-    
   </>
-      
   )
 }
 

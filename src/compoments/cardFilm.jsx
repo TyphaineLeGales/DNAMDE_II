@@ -20,6 +20,16 @@ import { useState } from "react";
 
 function CardFilm({ film }) {
     const [liked, setLiked] = useState(false);
+    const [ifLiked, setIfLiked] = useState([]);
+
+    function Liked() {
+        setLiked(!liked);
+        localStorage.setItem('liked', ifLiked);
+        
+        console.log(ifLiked)
+
+    }
+
     return (
         <div className="film-card">
             <div className="film-image-container">
@@ -30,7 +40,7 @@ function CardFilm({ film }) {
                 />
                 <button 
                     className={`like-btn ${liked ? "liked" : ""}`} 
-                    onClick={() => setLiked(!liked)}  
+                    onClick={Liked}  
                 >
                     {liked ? "♥" : "♡"} 
                 </button>
