@@ -290,9 +290,7 @@
   transition: 0.3s;
 }
 
-.favorite-btn:hover {
-  transform: scale(1.15);
-}
+
 
 .film-card {
   position: relative;
