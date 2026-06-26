@@ -58,7 +58,7 @@ function App() {
   }
 
   if (loading) return <p>Chargement des films...</p>;
-  if (error) return <p>Erreur lors du chargement : {error}</p>;
+  if (error) return <p>Erreurs lors du chargement : {error}</p>;
 
   return (
     <div id='app' className={darkMode ? 'dark' : ''}>
