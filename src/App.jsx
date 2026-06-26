@@ -1,5 +1,8 @@
 import ListFilm from "./compoments/listFilm.jsx";
 import { useState } from "react";
+import Explore from "./compoments/naviguation.jsx";
+import PageFavorite from "./compoments/favoritePage.jsx";
+import Naviguation from "./compoments/naviguation.jsx";
 // import SqueletteCard from "./compoments/squeletteCard.jsx";
 
 function App() {
@@ -15,8 +18,10 @@ function App() {
       <button onClick={toggleDark} className="mode">
         {darkMode ? "☀️ Mode clair" : "🌙 Mode nuit"}
       </button>
+      <Naviguation/>
+
       <h1>Hello Louane 🌞</h1>
-      <ListFilm/>   
+      <ListFilm/>
     </div>
     // <div><SqueletteCard/></div>
   )
