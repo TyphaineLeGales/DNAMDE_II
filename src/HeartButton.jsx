@@ -1,7 +1,7 @@
 import "./card.css";
 
 
-function HeartButton(){
+function HeartButton(props){
 
     return (
         <div>

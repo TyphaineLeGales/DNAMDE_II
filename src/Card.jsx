@@ -20,7 +20,7 @@ function Card(props) {
   return (
     <div className="card">
       <img src={props.data.image} alt="" className="movie-picture" />
-      <HeartButton/>
+      <HeartButton onClick={onBtnClick}/>
       <h1 className="movie-title"> {props.data.title} </h1>
       <div className="movie-date-rate-container">
         <p className="movie-date">{props.data.release_date}</p>

@@ -6,7 +6,7 @@ import FavoriteContext from "./FavoriteContext";
 function App() {
     const [favorites, setFavorites] = useState([]);
   
-    const FavoritesContext = createContext(favorites);
+
   
     return (
     <FavoriteContext  value={{ favorites, setFavorites }}>
@@ -18,3 +18,4 @@ function App() {
     }
 
     export default App
+ 
